@@ -1,2 +1,81 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; -- unsigned mota erabili ahal izateko
 
--- test
+ENTITY UART IS
+    PORT (
+        -- input
+        UART_IN    : IN STD_LOGIC;
+        UART_RESET : IN STD_LOGIC;
+        clk        : IN STD_LOGIC;
+
+        -- output
+        UART_OUT   : OUT unsigned(7 DOWNTO 0);
+        UART_DONE  : OUT STD_LOGIC
+    );
+END UART;
+
+ARCHITECTURE ART_UART OF UART IS
+    COMPONENT UART_UC IS
+        PORT (
+            -- entradas
+            UART_IN    : IN STD_LOGIC;
+            UART_TC    : IN STD_LOGIC;
+
+            clk        : IN STD_LOGIC;
+            UART_RESET : IN STD_LOGIC;
+
+            -- salidas
+            D_CNT      : OUT STD_LOGIC;
+            DESP_D     : OUT STD_LOGIC;
+            UART_DONE  : OUT STD_LOGIC
+
+        );
+    END COMPONENT;
+
+    SIGNAL UART_TC : STD_LOGIC;
+    SIGNAL bits    : unsigned (2 DOWNTO 0);
+    SIGNAL D_CNT   : STD_LOGIC;
+    SIGNAL DESP_D  : STD_LOGIC;
+
+    SIGNAL CNT     : unsigned (12 DOWNTO 0);
+BEGIN
+    UC : UART_UC PORT MAP(
+        UART_IN    => UART_IN,
+        UART_TC    => UART_TC,
+        D_CNT      => D_CNT,
+        DESP_D     => DESP_D,
+        UART_DONE  => UART_DONE,
+        clk        => clk,
+        UART_RESET => UART_RESET
+
+    );
+
+    -- contador
+    PROCESS (clk, UART_RESET)
+    BEGIN
+        IF UART_RESET = '1' THEN
+            CNT <= x"1387"; -- 4999
+        ELSIF clk'event AND clk = '1' THEN
+            IF D_CNT = '1' THEN
+                CNT <= CNT - 1;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    UART_TC <= '1' WHEN CNT = "0" ELSE
+        '0';
+
+    -- Registo bits
+    PROCESS (clk, UART_RESET)
+    BEGIN
+        IF UART_RESET = '1' THEN
+            UART_OUT <= x"0000";
+        ELSIF clk'event AND CLclkK = '1' THEN
+            IF DESP_D = '1' THEN
+                RRGB <= RGB;
+            END IF;
+        END IF;
+    END PROCESS;
+
+END ART_UART;
