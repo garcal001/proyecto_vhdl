@@ -1,18 +1,4 @@
-# Compile of UART.vhd failed with 1 errors.
-# Compile of UART_UC.vhd was successful.
-# 2 compiles, 1 failed with 1 error.
-# Compile of UART.vhd was successful with warnings.
-# Compile of UART_UC.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-# Compile of UART.vhd was successful with warnings.
-# Compile of UART_UC.vhd was successful.
-# 2 compiles, 0 failed with no errors.
 # Compile of UART.vhd was successful.
 # Compile of UART_UC.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-clear
-# TERM environment variable not set.
-clc
-# invalid command name "clc"
-cls
-# invalid command name "cls"
+# Compile of UART_tb.vhd was successful.
+# 3 compiles, 0 failed with no errors.

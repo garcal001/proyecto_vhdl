@@ -21,36 +21,36 @@ ENTITY UART_UC IS
   );
 END UART_UC;
 ARCHITECTURE def_UART_UC OF UART_UC IS
-  TYPE estado IS (e0, e1, e2, e3, E4);
+  TYPE estado IS (e0, e1, e2, e3);
   SIGNAL EP, ES : estado;
-  SIGNAL bits   : unsigned (3 DOWNTO 0);
+  SIGNAL bits   : unsigned (2 DOWNTO 0);
+
 BEGIN
 
-  PROCESS (EP, UART_IN, UART_TC)
+  PROCESS (EP, UART_IN, UART_TC, bits)
     -- proceso que determina el ES
   BEGIN
     CASE EP IS
-      WHEN e0 => IF (UART_IN = '0') THEN
-        ES <= e1;
+      WHEN e0 =>
+        bits <= "000";
+        IF (UART_IN = '0') THEN
+          ES <= e1;
+        END IF;
+
+      WHEN e1 => IF (UART_TC = '1') THEN
+        ES <= e2;
     END IF;
 
-    WHEN e1 => bits <= x"0";
-    ES              <= e2;
-
-    WHEN e2 => IF (UART_TC = '1') THEN
-    ES   <= e3;
+    WHEN e2 => IF (bits = "111") THEN
+    ES <= e3;
+  ELSE
+    ES   <= e1;
     bits <= bits + 1;
   END IF;
 
-  WHEN e3 => IF (bits = x"9") THEN
-  ES <= e4;
-ELSE
-  ES <= e2;
-END IF;
+  WHEN e3     => ES     <= e0;
 
-WHEN e4     => ES     <= e0;
-
-WHEN OTHERS => ES <= ES;
+  WHEN OTHERS => ES <= ES;
 
 END CASE;
 END PROCESS;
@@ -64,14 +64,14 @@ BEGIN
     EP <= ES;
   END IF;
 END PROCESS;
--- Seï¿½ales de control
+-- Señales de control
 
 -- bits  <= "000" WHEN (EP = e0);
-D_CNT <= '1' WHEN (EP = e2) ELSE
+D_CNT <= '1' WHEN (EP = e1) ELSE
   '0';
-DESP_D <= '1' WHEN (EP = e3) ELSE
+DESP_D <= '1' WHEN (EP = e2) ELSE
   '0';
-UART_DONE <= '1' WHEN (EP = e4) ELSE
+UART_DONE <= '1' WHEN (EP = e3) ELSE
   '0';
 
 END def_UART_UC;

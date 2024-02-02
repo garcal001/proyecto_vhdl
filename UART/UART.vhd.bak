@@ -34,10 +34,11 @@ ARCHITECTURE ART_UART OF UART IS
     END COMPONENT;
 
     SIGNAL UART_TC   : STD_LOGIC;
+    SIGNAL bits      : unsigned (2 DOWNTO 0);
     SIGNAL D_CNT     : STD_LOGIC;
     SIGNAL DESP_D    : STD_LOGIC;
 
-    SIGNAL CNT       : unsigned (11 DOWNTO 0);
+    SIGNAL CNT       : unsigned (12 DOWNTO 0);
 
     SIGNAL UART_BITS : unsigned (7 DOWNTO 0);
 BEGIN
@@ -51,26 +52,21 @@ BEGIN
         UART_RESET => UART_RESET
     );
 
-    --DESP_D <= UART_TC;
     -- contador
     PROCESS (clk, UART_RESET)
     BEGIN
         IF UART_RESET = '1' THEN
-            CNT <= x"1F3"; -- 499
-
+            CNT <= "1001110000111"; -- 4999
         ELSIF clk'event AND clk = '1' THEN
-            IF CNT = "0" THEN
-                CNT <= x"1F3";
-            END IF;
-            IF D_CNT = '1' AND CNT > 0 THEN
+            IF D_CNT = '1' THEN
                 CNT <= CNT - 1;
-
             END IF;
         END IF;
     END PROCESS;
 
     UART_TC <= '1' WHEN CNT = "0" ELSE
         '0';
+
     -- Registo bits
     PROCESS (clk, UART_RESET)
     BEGIN
