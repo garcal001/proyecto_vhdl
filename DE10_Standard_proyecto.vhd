@@ -33,7 +33,7 @@ ENTITY DE10_Standard_proyecto IS
         -- LT24_ADC_DCLK        : out   std_logic;
         -- LT24_ADC_CS_N        : out   std_logic;
         -- UART --
-        --  UART_RX     : in    std_logic;
+        UART_RX  : IN STD_LOGIC
         -- GPIO default ----------------
         --  GPIO        : inout std_logic_vector(35 downto 0);
         -- CODEC Audio ----------------
@@ -117,8 +117,35 @@ END;
 
 ARCHITECTURE rtl OF DE10_Standard_proyecto IS
     SIGNAL clk, reset, reset_l : STD_LOGIC;
+    SIGNAL bits_leds           : unsigned(7 DOWNTO 0);
+    SIGNAL done_uart           : STD_LOGIC;
+
+    COMPONENT UART IS
+        PORT (
+            -- input
+            UART_IN    : IN STD_LOGIC;
+            UART_RESET : IN STD_LOGIC;
+            clk        : IN STD_LOGIC;
+
+            -- output
+            UART_OUT   : OUT unsigned(7 DOWNTO 0);
+            UART_DONE  : OUT STD_LOGIC
+        );
+    END COMPONENT;
 
 BEGIN
+    UART_MAP : UART PORT MAP(
+        UART_IN    => UART_RX,
+        UART_RESET => reset,
+        clk        => clk,
+
+        -- output
+        UART_OUT   => bits_leds,
+        UART_DONE  => done_uart
+    );
+
+    LEDR    <= done_uart & '0' & STD_LOGIC_VECTOR(bits_leds);
+
     clk     <= CLOCK_50;
     reset_l <= KEY(0);
     reset   <= NOT(KEY(0));

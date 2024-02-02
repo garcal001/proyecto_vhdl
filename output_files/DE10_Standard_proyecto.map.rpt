@@ -1,0 +1,378 @@
+Analysis & Synthesis report for DE10_Standard_proyecto
+Fri Feb  2 11:00:45 2024
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP
+  9. User-Specified and Inferred Latches
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2022  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Feb  2 11:00:45 2024       ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                   ; DE10_Standard_proyecto                      ;
+; Top-level Entity Name           ; DE10_Standard_proyecto                      ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 33                                          ;
+; Total pins                      ; 13                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                                     ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+; Option                                                                          ; Setting                ; Default Value          ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+; Device                                                                          ; 5CSXFC6D6F31C6         ;                        ;
+; Top-level entity name                                                           ; DE10_Standard_proyecto ; DE10_Standard_proyecto ;
+; Family name                                                                     ; Cyclone V              ; Cyclone V              ;
+; Maximum processors allowed for parallel compilation                             ; All                    ;                        ;
+; Use smart compilation                                                           ; Off                    ; Off                    ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                     ; On                     ;
+; Enable compact report table                                                     ; Off                    ; Off                    ;
+; Restructure Multiplexers                                                        ; Auto                   ; Auto                   ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                    ; Off                    ;
+; Create Debugging Nodes for IP Cores                                             ; Off                    ; Off                    ;
+; Preserve fewer node names                                                       ; On                     ; On                     ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable                 ; Enable                 ;
+; Verilog Version                                                                 ; Verilog_2001           ; Verilog_2001           ;
+; VHDL Version                                                                    ; VHDL_1993              ; VHDL_1993              ;
+; State Machine Processing                                                        ; Auto                   ; Auto                   ;
+; Safe State Machine                                                              ; Off                    ; Off                    ;
+; Extract Verilog State Machines                                                  ; On                     ; On                     ;
+; Extract VHDL State Machines                                                     ; On                     ; On                     ;
+; Ignore Verilog initial constructs                                               ; Off                    ; Off                    ;
+; Iteration limit for constant Verilog loops                                      ; 5000                   ; 5000                   ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                    ; 250                    ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                     ; On                     ;
+; Infer RAMs from Raw Logic                                                       ; On                     ; On                     ;
+; Parallel Synthesis                                                              ; On                     ; On                     ;
+; DSP Block Balancing                                                             ; Auto                   ; Auto                   ;
+; NOT Gate Push-Back                                                              ; On                     ; On                     ;
+; Power-Up Don't Care                                                             ; On                     ; On                     ;
+; Remove Redundant Logic Cells                                                    ; Off                    ; Off                    ;
+; Remove Duplicate Registers                                                      ; On                     ; On                     ;
+; Ignore CARRY Buffers                                                            ; Off                    ; Off                    ;
+; Ignore CASCADE Buffers                                                          ; Off                    ; Off                    ;
+; Ignore GLOBAL Buffers                                                           ; Off                    ; Off                    ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                    ; Off                    ;
+; Ignore LCELL Buffers                                                            ; Off                    ; Off                    ;
+; Ignore SOFT Buffers                                                             ; On                     ; On                     ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                    ; Off                    ;
+; Optimization Technique                                                          ; Balanced               ; Balanced               ;
+; Carry Chain Length                                                              ; 70                     ; 70                     ;
+; Auto Carry Chains                                                               ; On                     ; On                     ;
+; Auto Open-Drain Pins                                                            ; On                     ; On                     ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                    ; Off                    ;
+; Auto ROM Replacement                                                            ; On                     ; On                     ;
+; Auto RAM Replacement                                                            ; On                     ; On                     ;
+; Auto DSP Block Replacement                                                      ; On                     ; On                     ;
+; Auto Shift Register Replacement                                                 ; Auto                   ; Auto                   ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                   ; Auto                   ;
+; Auto Clock Enable Replacement                                                   ; On                     ; On                     ;
+; Strict RAM Replacement                                                          ; Off                    ; Off                    ;
+; Allow Synchronous Control Signals                                               ; On                     ; On                     ;
+; Force Use of Synchronous Clear Signals                                          ; Off                    ; Off                    ;
+; Auto Resource Sharing                                                           ; Off                    ; Off                    ;
+; Allow Any RAM Size For Recognition                                              ; Off                    ; Off                    ;
+; Allow Any ROM Size For Recognition                                              ; Off                    ; Off                    ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                    ; Off                    ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                     ; On                     ;
+; Ignore translate_off and synthesis_off directives                               ; Off                    ; Off                    ;
+; Timing-Driven Synthesis                                                         ; On                     ; On                     ;
+; Report Parameter Settings                                                       ; On                     ; On                     ;
+; Report Source Assignments                                                       ; On                     ; On                     ;
+; Report Connectivity Checks                                                      ; On                     ; On                     ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                    ; Off                    ;
+; Synchronization Register Chain Length                                           ; 3                      ; 3                      ;
+; Power Optimization During Synthesis                                             ; Normal compilation     ; Normal compilation     ;
+; HDL message level                                                               ; Level2                 ; Level2                 ;
+; Suppress Register Optimization Related Messages                                 ; Off                    ; Off                    ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                   ; 5000                   ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                   ; 5000                   ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                    ; 100                    ;
+; Clock MUX Protection                                                            ; On                     ; On                     ;
+; Auto Gated Clock Conversion                                                     ; Off                    ; Off                    ;
+; Block Design Naming                                                             ; Auto                   ; Auto                   ;
+; SDC constraint protection                                                       ; Off                    ; Off                    ;
+; Synthesis Effort                                                                ; Auto                   ; Auto                   ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                     ; On                     ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                    ; Off                    ;
+; Analysis & Synthesis Message Level                                              ; Medium                 ; Medium                 ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                   ; Auto                   ;
+; Resource Aware Inference For Block RAM                                          ; On                     ; On                     ;
+; Automatic Parallel Synthesis                                                    ; On                     ; On                     ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                    ; Off                    ;
++---------------------------------------------------------------------------------+------------------------+------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; DE10_Standard_proyecto.vhd       ; yes             ; User VHDL File  ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd ;         ;
+; UART/UART.vhd                    ; yes             ; User VHDL File  ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd              ;         ;
+; UART/UART_UC.vhd                 ; yes             ; User VHDL File  ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 23             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 37             ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 3              ;
+;     -- 5 input functions                    ; 1              ;
+;     -- 4 input functions                    ; 2              ;
+;     -- <=3 input functions                  ; 31             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 33             ;
+;                                             ;                ;
+; I/O pins                                    ; 13             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 33             ;
+; Total fan-out                               ; 234            ;
+; Average fan-out                             ; 2.44           ;
++---------------------------------------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name            ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
+; |DE10_Standard_proyecto    ; 37 (0)              ; 33 (0)                    ; 0                 ; 0          ; 13   ; 0            ; |DE10_Standard_proyecto                          ; DE10_Standard_proyecto ; work         ;
+;    |UART:UART_MAP|         ; 37 (21)             ; 33 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP            ; UART                   ; work         ;
+;       |UART_UC:UC|         ; 16 (16)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC ; UART_UC                ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------+
+; State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP ;
++-------+-------+-------+-------+-------------------------------------+
+; Name  ; EP.e3 ; EP.e2 ; EP.e1 ; EP.e0                               ;
++-------+-------+-------+-------+-------------------------------------+
+; EP.e0 ; 0     ; 0     ; 0     ; 0                                   ;
+; EP.e1 ; 0     ; 0     ; 1     ; 1                                   ;
+; EP.e2 ; 0     ; 1     ; 0     ; 1                                   ;
+; EP.e3 ; 1     ; 0     ; 0     ; 1                                   ;
++-------+-------+-------+-------+-------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++----------------------------------------------------+------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                ; Free of Timing Hazards ;
++----------------------------------------------------+------------------------------------+------------------------+
+; UART:UART_MAP|UART_UC:UC|ES.e3_104                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e2_114                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[0]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[1]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[2]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e1_124                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e0_134                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                                    ;                        ;
++----------------------------------------------------+------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 33    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 25    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; UART:UART_MAP|CNT[0]                   ; 3       ;
+; UART:UART_MAP|CNT[12]                  ; 2       ;
+; UART:UART_MAP|CNT[9]                   ; 2       ;
+; UART:UART_MAP|CNT[8]                   ; 2       ;
+; UART:UART_MAP|CNT[7]                   ; 2       ;
+; UART:UART_MAP|CNT[2]                   ; 2       ;
+; UART:UART_MAP|CNT[1]                   ; 2       ;
+; Total number of inverted registers = 7 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 33                          ;
+;     CLR               ; 4                           ;
+;     ENA               ; 8                           ;
+;     ENA CLR           ; 21                          ;
+; arriav_lcell_comb     ; 38                          ;
+;     arith             ; 13                          ;
+;         1 data inputs ; 13                          ;
+;     normal            ; 25                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 2                           ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 3                           ;
+; boundary_port         ; 13                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.20                        ;
+; Average LUT depth     ; 1.93                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Fri Feb  2 11:00:40 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file DE10_Standard_proyecto.vhd
+    Info (12022): Found design unit 1: DE10_Standard_proyecto-rtl File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 118
+    Info (12023): Found entity 1: DE10_Standard_proyecto File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UART/UART.vhd
+    Info (12022): Found design unit 1: UART-ART_UART File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 18
+    Info (12023): Found entity 1: UART File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file UART/UART_UC.vhd
+    Info (12022): Found design unit 1: UART_UC-def_UART_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 23
+    Info (12023): Found entity 1: UART_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 8
+Info (12127): Elaborating entity "DE10_Standard_proyecto" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at DE10_Standard_proyecto.vhd(119): object "reset_l" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 119
+Info (12128): Elaborating entity "UART" for hierarchy "UART:UART_MAP" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 137
+Info (12128): Elaborating entity "UART_UC" for hierarchy "UART:UART_MAP|UART_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 45
+Warning (10492): VHDL Process Statement warning at UART_UC.vhd(53): signal "ES" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 53
+Warning (10631): VHDL Process Statement warning at UART_UC.vhd(30): inferring latch(es) for signal or variable "bits", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at UART_UC.vhd(30): inferring latch(es) for signal or variable "ES", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "ES.e3" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "ES.e2" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "ES.e1" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "ES.e0" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "bits[0]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "bits[1]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Info (10041): Inferred latch for "bits[2]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e2_114 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e1 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[0] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|bits[0] File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[1] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[2] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e1_124 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e0 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 56 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Fri Feb  2 11:00:45 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
+
+

@@ -75,10 +75,11 @@ BEGIN
         ELSIF clk'event AND clk = '1' THEN
             IF DESP_D = '1' THEN
                 UART_BITS <= UART_IN & UART_BITS (7 DOWNTO 1);
+                UART_OUT  <= UART_BITS;
             END IF;
         END IF;
     END PROCESS;
 
-    UART_OUT <= UART_BITS;
+    -- UART_OUT <= UART_BITS;
 
 END ART_UART;

@@ -1,78 +1,77 @@
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all; -- unsigned mota erabili ahal izateko
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; -- unsigned mota erabili ahal izateko
 
 -- ping-pong jokoa. bi erabiltzaileen artean.
 -- fitxategi honetan kontrol-unitatearen definizioa soilik ageri da.
-entity UART_UC is
-   port
-      (
-        -- Entradas
-        clk:        in std_logic;
-        UART_RESET: in std_logic;
+ENTITY UART_UC IS
+  PORT (
+    -- Entradas
+    clk        : IN STD_LOGIC;
+    UART_RESET : IN STD_LOGIC;
 
-		UART_IN:    in std_logic;
-        UART_TC:    in std_logic;
- 
-		-- Salidas
-        D_CNT:      out std_logic;
-        DESP_D:     out std_logic;
-        UART_DONE:   out std_logic
+    UART_IN    : IN STD_LOGIC;
+    UART_TC    : IN STD_LOGIC;
 
-		
-      );
-end UART_UC;
+    -- Salidas
+    D_CNT      : OUT STD_LOGIC;
+    DESP_D     : OUT STD_LOGIC;
+    UART_DONE  : OUT STD_LOGIC
+  );
+END UART_UC;
+ARCHITECTURE def_UART_UC OF UART_UC IS
+  TYPE estado IS (e0, e1, e2, e3);
+  SIGNAL EP, ES : estado;
+  SIGNAL bits   : unsigned (2 DOWNTO 0);
 
+BEGIN
 
-architecture def_UART_UC OF UART_UC is
-  type estado is (e0,e1,e2,e3);
-  signal EP,ES	: estado;
-  signal bits :     unsigned (2 downto 0); 
-  	
-begin
+  PROCESS (EP, UART_IN, UART_TC, bits)
+    -- proceso que determina el ES
+  BEGIN
+    CASE EP IS
+      WHEN e0 =>
+        bits <= "000";
+        IF (UART_IN = '0') THEN
+          ES <= e1;
+        END IF;
 
-process (EP,UART_IN, UART_TC,bits)
--- proceso que determina el ES
-begin
-   case EP is
-	when e0 =>	if (UART_IN='0') then ES <= e1; 
-    end if ;
-    
-    when e1 => if (UART_TC = '1') then ES <= e2;
-    end if; 
+      WHEN e1 => IF (UART_TC = '1') THEN
+        ES <= e2;
+    END IF;
 
-    when e2 => if (bits = "111") then ES <= e3;
-                else 
-                ES <= e1;
-                bits <= bits + 1;  
-    end if;
+    WHEN e2 => IF (bits = "111") THEN
+    ES <= e3;
+  ELSE
+    ES   <= e1;
+    bits <= bits + 1;
+  END IF;
 
-    when e3 => ES <= e0; 
+  WHEN e3     => ES     <= e0;
 
-    when others  => ES <= ES;
+  WHEN OTHERS => ES <= ES;
 
-   end case;
-end process;
+END CASE;
+END PROCESS;
 
 -- proceso que actualiza el estado
-process (CLK, UART_RESET)
-begin
-if UART_RESET = '1' then EP<= e0;
-elsif (CLK'EVENT) and (CLK ='1') then EP <= ES ;
-end if;
-end process;
-
-
+PROCESS (CLK, UART_RESET)
+BEGIN
+  IF UART_RESET = '1' THEN
+    EP <= e0;
+  ELSIF (CLK'EVENT) AND (CLK = '1') THEN
+    EP <= ES;
+  END IF;
+END PROCESS;
 -- Señales de control
 
-bits <= "000"   when (EP = e0); 
-D_CNT <= '1'    when (EP = e1) else '0';
-DESP_D <= '1'   when (EP = e2) else '0';
-UART_DONE<= '1' when (EP = e3) else '0';
+-- bits  <= "000" WHEN (EP = e0);
+D_CNT <= '1' WHEN (EP = e1) ELSE
+  '0';
+DESP_D <= '1' WHEN (EP = e2) ELSE
+  '0';
+UART_DONE <= '1' WHEN (EP = e3) ELSE
+  '0';
 
-
-
-end def_UART_UC;
-
-
+END def_UART_UC;
