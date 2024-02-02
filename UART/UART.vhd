@@ -56,7 +56,7 @@ BEGIN
     PROCESS (clk, UART_RESET)
     BEGIN
         IF UART_RESET = '1' THEN
-            CNT <= x"1387"; -- 4999
+            CNT <= "1001110000111"; -- 4999
         ELSIF clk'event AND clk = '1' THEN
             IF D_CNT = '1' THEN
                 CNT <= CNT - 1;
@@ -71,12 +71,14 @@ BEGIN
     PROCESS (clk, UART_RESET)
     BEGIN
         IF UART_RESET = '1' THEN
-            UART_OUT <= x"0000";
+            UART_OUT <= x"00";
         ELSIF clk'event AND clk = '1' THEN
             IF DESP_D = '1' THEN
-                UART_OUT <= UART_IN & UART_OUT (7 DOWNTO 1);
+                UART_BITS <= UART_IN & UART_BITS (7 DOWNTO 1);
             END IF;
         END IF;
     END PROCESS;
+
+    UART_OUT <= UART_BITS;
 
 END ART_UART;

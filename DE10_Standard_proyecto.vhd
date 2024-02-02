@@ -13,7 +13,7 @@ ENTITY DE10_Standard_proyecto IS
         KEY      : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         --  KEY         : in    std_logic_vector(3 downto 0);
         -- LEDR ----------------
-        --  LEDR        : out   std_logic_vector(9 downto 0);
+        LEDR     : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
         -- SW ----------------
         --  SW          : in    std_logic_vector(9 downto 0);
         -- GPIO-LT24-UART ----------
