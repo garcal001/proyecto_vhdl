@@ -33,12 +33,14 @@ ARCHITECTURE ART_UART OF UART IS
         );
     END COMPONENT;
 
-    SIGNAL UART_TC : STD_LOGIC;
-    SIGNAL bits    : unsigned (2 DOWNTO 0);
-    SIGNAL D_CNT   : STD_LOGIC;
-    SIGNAL DESP_D  : STD_LOGIC;
+    SIGNAL UART_TC   : STD_LOGIC;
+    SIGNAL bits      : unsigned (2 DOWNTO 0);
+    SIGNAL D_CNT     : STD_LOGIC;
+    SIGNAL DESP_D    : STD_LOGIC;
 
-    SIGNAL CNT     : unsigned (12 DOWNTO 0);
+    SIGNAL CNT       : unsigned (12 DOWNTO 0);
+
+    SIGNAL UART_BITS : unsigned (7 DOWNTO 0);
 BEGIN
     UC : UART_UC PORT MAP(
         UART_IN    => UART_IN,
@@ -48,7 +50,6 @@ BEGIN
         UART_DONE  => UART_DONE,
         clk        => clk,
         UART_RESET => UART_RESET
-
     );
 
     -- contador
@@ -71,9 +72,9 @@ BEGIN
     BEGIN
         IF UART_RESET = '1' THEN
             UART_OUT <= x"0000";
-        ELSIF clk'event AND CLclkK = '1' THEN
+        ELSIF clk'event AND clk = '1' THEN
             IF DESP_D = '1' THEN
-                RRGB <= RGB;
+                UART_OUT <= UART_IN & UART_OUT (7 DOWNTO 1);
             END IF;
         END IF;
     END PROCESS;
