@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_Standard_proyecto
-Fri Feb  2 11:00:45 2024
+Tue Feb  6 10:04:13 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -17,9 +17,10 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
   9. User-Specified and Inferred Latches
  10. General Register Statistics
  11. Inverted Register Statistics
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -46,7 +47,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Feb  2 11:00:45 2024       ;
+; Analysis & Synthesis Status     ; Successful - Tue Feb  6 10:04:13 2024       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; DE10_Standard_proyecto                      ;
 ; Top-level Entity Name           ; DE10_Standard_proyecto                      ;
@@ -167,7 +168,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -187,14 +189,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 23             ;
+; Estimate of Logic utilization (ALMs needed) ; 30             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 37             ;
+; Combinational ALUT usage for logic          ; 46             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 3              ;
-;     -- 5 input functions                    ; 1              ;
-;     -- 4 input functions                    ; 2              ;
-;     -- <=3 input functions                  ; 31             ;
+;     -- 6 input functions                    ; 12             ;
+;     -- 5 input functions                    ; 5              ;
+;     -- 4 input functions                    ; 4              ;
+;     -- <=3 input functions                  ; 25             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 33             ;
 ;                                             ;                ;
@@ -204,8 +206,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 33             ;
-; Total fan-out                               ; 234            ;
-; Average fan-out                             ; 2.44           ;
+; Total fan-out                               ; 300            ;
+; Average fan-out                             ; 2.86           ;
 +---------------------------------------------+----------------+
 
 
@@ -214,9 +216,9 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name            ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
-; |DE10_Standard_proyecto    ; 37 (0)              ; 33 (0)                    ; 0                 ; 0          ; 13   ; 0            ; |DE10_Standard_proyecto                          ; DE10_Standard_proyecto ; work         ;
-;    |UART:UART_MAP|         ; 37 (21)             ; 33 (29)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP            ; UART                   ; work         ;
-;       |UART_UC:UC|         ; 16 (16)             ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC ; UART_UC                ; work         ;
+; |DE10_Standard_proyecto    ; 46 (0)              ; 33 (0)                    ; 0                 ; 0          ; 13   ; 0            ; |DE10_Standard_proyecto                          ; DE10_Standard_proyecto ; work         ;
+;    |UART:UART_MAP|         ; 46 (27)             ; 33 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP            ; UART                   ; work         ;
+;       |UART_UC:UC|         ; 19 (19)             ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC ; UART_UC                ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -224,14 +226,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------+
 ; State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP ;
-+-------+-------+-------+-------+-------------------------------------+
-; Name  ; EP.e3 ; EP.e2 ; EP.e1 ; EP.e0                               ;
-+-------+-------+-------+-------+-------------------------------------+
-; EP.e0 ; 0     ; 0     ; 0     ; 0                                   ;
-; EP.e1 ; 0     ; 0     ; 1     ; 1                                   ;
-; EP.e2 ; 0     ; 1     ; 0     ; 1                                   ;
-; EP.e3 ; 1     ; 0     ; 0     ; 1                                   ;
-+-------+-------+-------+-------+-------------------------------------+
++-------+-------+-------+-------+-------+-----------------------------+
+; Name  ; EP.E4 ; EP.e3 ; EP.e2 ; EP.e1 ; EP.e0                       ;
++-------+-------+-------+-------+-------+-----------------------------+
+; EP.e0 ; 0     ; 0     ; 0     ; 0     ; 0                           ;
+; EP.e1 ; 0     ; 0     ; 0     ; 1     ; 1                           ;
+; EP.e2 ; 0     ; 0     ; 1     ; 0     ; 1                           ;
+; EP.e3 ; 0     ; 1     ; 0     ; 0     ; 1                           ;
+; EP.E4 ; 1     ; 0     ; 0     ; 0     ; 1                           ;
++-------+-------+-------+-------+-------+-----------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -239,14 +242,16 @@ Encoding Type:  One-Hot
 +----------------------------------------------------+------------------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal                ; Free of Timing Hazards ;
 +----------------------------------------------------+------------------------------------+------------------------+
-; UART:UART_MAP|UART_UC:UC|ES.e3_104                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|ES.e2_114                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|bits[0]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|bits[1]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|bits[2]                   ; UART:UART_MAP|UART_UC:UC|Selector3 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|ES.e1_124                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
-; UART:UART_MAP|UART_UC:UC|ES.e0_134                 ; UART:UART_MAP|UART_UC:UC|Selector4 ; yes                    ;
-; Number of user-specified and inferred latches = 7  ;                                    ;                        ;
+; UART:UART_MAP|UART_UC:UC|ES.E4_157                 ; UART:UART_MAP|UART_UC:UC|Selector6 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e3_167                 ; UART:UART_MAP|UART_UC:UC|Selector6 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[1]                   ; UART:UART_MAP|UART_UC:UC|Selector2 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[2]                   ; UART:UART_MAP|UART_UC:UC|Selector2 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[3]                   ; UART:UART_MAP|UART_UC:UC|Selector2 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|bits[0]                   ; UART:UART_MAP|UART_UC:UC|Selector2 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e2_177                 ; UART:UART_MAP|UART_UC:UC|Selector6 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e0_197                 ; UART:UART_MAP|UART_UC:UC|Selector6 ; yes                    ;
+; UART:UART_MAP|UART_UC:UC|ES.e1_187                 ; UART:UART_MAP|UART_UC:UC|Selector6 ; yes                    ;
+; Number of user-specified and inferred latches = 9  ;                                    ;                        ;
 +----------------------------------------------------+------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -261,7 +266,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 25    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 16    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -271,15 +276,25 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; UART:UART_MAP|CNT[0]                   ; 3       ;
-; UART:UART_MAP|CNT[12]                  ; 2       ;
-; UART:UART_MAP|CNT[9]                   ; 2       ;
-; UART:UART_MAP|CNT[8]                   ; 2       ;
-; UART:UART_MAP|CNT[7]                   ; 2       ;
-; UART:UART_MAP|CNT[2]                   ; 2       ;
-; UART:UART_MAP|CNT[1]                   ; 2       ;
+; UART:UART_MAP|CNT[0]                   ; 14      ;
+; UART:UART_MAP|CNT[8]                   ; 3       ;
+; UART:UART_MAP|CNT[7]                   ; 3       ;
+; UART:UART_MAP|CNT[6]                   ; 3       ;
+; UART:UART_MAP|CNT[5]                   ; 3       ;
+; UART:UART_MAP|CNT[4]                   ; 3       ;
+; UART:UART_MAP|CNT[1]                   ; 3       ;
 ; Total number of inverted registers = 7 ;         ;
 +----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE10_Standard_proyecto|UART:UART_MAP|CNT[11] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |DE10_Standard_proyecto|UART:UART_MAP|CNT[8]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -288,24 +303,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 33                          ;
-;     CLR               ; 4                           ;
+;     CLR               ; 17                          ;
 ;     ENA               ; 8                           ;
-;     ENA CLR           ; 21                          ;
-; arriav_lcell_comb     ; 38                          ;
-;     arith             ; 13                          ;
-;         1 data inputs ; 13                          ;
-;     normal            ; 25                          ;
+;     ENA CLR           ; 8                           ;
+; arriav_lcell_comb     ; 47                          ;
+;     arith             ; 12                          ;
+;         1 data inputs ; 12                          ;
+;     normal            ; 35                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 8                           ;
+;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 2                           ;
-;         5 data inputs ; 1                           ;
-;         6 data inputs ; 3                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 4                           ;
+;         5 data inputs ; 5                           ;
+;         6 data inputs ; 12                          ;
 ; boundary_port         ; 13                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.20                        ;
-; Average LUT depth     ; 1.93                        ;
+; Max LUT depth         ; 3.10                        ;
+; Average LUT depth     ; 2.06                        ;
 +-----------------------+-----------------------------+
 
 
@@ -324,7 +339,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Fri Feb  2 11:00:40 2024
+    Info: Processing started: Tue Feb  6 10:04:08 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file DE10_Standard_proyecto.vhd
@@ -339,40 +354,46 @@ Info (12021): Found 2 design units, including 1 entities, in source file UART/UA
 Info (12127): Elaborating entity "DE10_Standard_proyecto" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at DE10_Standard_proyecto.vhd(119): object "reset_l" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 119
 Info (12128): Elaborating entity "UART" for hierarchy "UART:UART_MAP" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 137
-Info (12128): Elaborating entity "UART_UC" for hierarchy "UART:UART_MAP|UART_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 45
+Info (12128): Elaborating entity "UART_UC" for hierarchy "UART:UART_MAP|UART_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 44
+Warning (10492): VHDL Process Statement warning at UART_UC.vhd(42): signal "bits" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at UART_UC.vhd(45): signal "bits" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 45
 Warning (10492): VHDL Process Statement warning at UART_UC.vhd(53): signal "ES" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 53
-Warning (10631): VHDL Process Statement warning at UART_UC.vhd(30): inferring latch(es) for signal or variable "bits", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Warning (10631): VHDL Process Statement warning at UART_UC.vhd(30): inferring latch(es) for signal or variable "ES", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "ES.e3" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "ES.e2" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "ES.e1" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "ES.e0" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "bits[0]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "bits[1]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Info (10041): Inferred latch for "bits[2]" at UART_UC.vhd(30) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e2_114 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e1 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
-Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[0] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|bits[0] File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
-Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[1] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at UART_UC.vhd(29): inferring latch(es) for signal or variable "ES", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Warning (10631): VHDL Process Statement warning at UART_UC.vhd(29): inferring latch(es) for signal or variable "bits", which holds its previous value in one or more paths through the process File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "bits[0]" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "bits[1]" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "bits[2]" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "bits[3]" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "ES.E4" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "ES.e3" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "ES.e2" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "ES.e1" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Info (10041): Inferred latch for "ES.e0" at UART_UC.vhd(29) File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e3_167 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
     Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
-Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[2] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[1] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
     Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
-Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e1_124 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 30
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[2] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[3] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|bits[0] has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e2 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
+Warning (13012): Latch UART:UART_MAP|UART_UC:UC|ES.e1_187 has unsafe behavior File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 29
     Warning (13013): Ports D and ENA on the latch are fed by the same signal UART:UART_MAP|UART_UC:UC|EP.e0 File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 25
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 69 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 56 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
-    Info: Peak virtual memory: 496 megabytes
-    Info: Processing ended: Fri Feb  2 11:00:45 2024
+    Info (21061): Implemented 66 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 535 megabytes
+    Info: Processing ended: Tue Feb  6 10:04:13 2024
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

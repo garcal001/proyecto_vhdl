@@ -1,7 +1,8 @@
 
 State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP
-Name EP.e3 EP.e2 EP.e1 EP.e0 
-EP.e0 0 0 0 0 
-EP.e1 0 0 1 1 
-EP.e2 0 1 0 1 
-EP.e3 1 0 0 1 
+Name EP.E4 EP.e3 EP.e2 EP.e1 EP.e0 
+EP.e0 0 0 0 0 0 
+EP.e1 0 0 0 1 1 
+EP.e2 0 0 1 0 1 
+EP.e3 0 1 0 0 1 
+EP.E4 1 0 0 0 1 

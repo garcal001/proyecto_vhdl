@@ -10,23 +10,23 @@ z2
 cModel Technology
 d/home/guillermo
 Euart
-Z0 w1706881582
+Z0 w1707210289
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 26
+!i122 32
 Z4 d/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART
 Z5 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd
 Z6 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd
 l0
 L5 1
-VL54c8i>GGh5W@JM;C9N=j0
-!s100 MoWHn:SDnFPb0_if6Eblz2
+VP^I6:c8DVC?3X9A@8g4]M0
+!s100 ?7iNC?d1HblHN36?Y?icJ3
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1706886025
+Z8 !s110 1707210983
 !i10b 1
-Z9 !s108 1706886025.000000
+Z9 !s108 1707210983.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd|
 Z11 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Aart_uart
 R1
 R2
 R3
-DEx4 work 4 uart 0 22 L54c8i>GGh5W@JM;C9N=j0
-!i122 26
+DEx4 work 4 uart 0 22 P^I6:c8DVC?3X9A@8g4]M0
+!i122 32
 l43
 L18 72
-V0W>1mJ[M?S96bE>6Y<4K00
-!s100 Qf918bBONi]<?9V:aUGX?1
+Vm7<ign_@IEzWKI[Vng[Lj2
+!s100 mLe2aGbdNEiCk<8g<=nzN2
 R7
 32
 R8
@@ -57,7 +57,7 @@ Z14 w1706884267
 R3
 R2
 R1
-!i122 28
+!i122 34
 R4
 Z15 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd
 Z16 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd
@@ -80,7 +80,7 @@ R3
 R2
 R1
 Z19 DEx4 work 7 uart_tb 0 22 UTiOYj?bE=a3dTl4BbS^d2
-!i122 28
+!i122 34
 l29
 Z20 L9 67
 Z21 VCN^VTWB0TzBT<n]IGh7]13
@@ -96,11 +96,11 @@ R18
 R12
 R13
 Euart_uc
-Z23 w1706886004
+Z23 w1707210887
 R1
 R2
 R3
-!i122 27
+!i122 33
 R4
 Z24 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
 Z25 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
@@ -123,11 +123,11 @@ R1
 R2
 R3
 DEx4 work 7 uart_uc 0 22 3^86`ZHgG[NQ]0Gf<I11W2
-!i122 27
+!i122 33
 l27
-L23 55
-VD05FzTTgAlGm?R?V]a3nl2
-!s100 FP4Y2bo:c_5Dj38@:FO<o1
+L23 56
+V?kbU04jTaYc`S^e89nVXh3
+!s100 A=I>7]TVEh0=KI:DGL?e:3
 R7
 32
 R8

@@ -42,15 +42,16 @@ BEGIN
     bits <= bits + 1;
   END IF;
 
-  WHEN e3 => IF (bits = x"9") THEN
-  ES <= e4;
-ELSE
-  ES <= e2;
-END IF;
+  WHEN e3 =>
+  IF (bits = x"9") THEN
+    ES <= e4;
+  ELSE
+    ES <= e2;
+  END IF;
 
-WHEN e4     => ES     <= e0;
+  WHEN e4     => ES     <= e0;
 
-WHEN OTHERS => ES <= ES;
+  WHEN OTHERS => ES <= ES;
 
 END CASE;
 END PROCESS;

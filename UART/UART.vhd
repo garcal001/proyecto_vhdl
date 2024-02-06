@@ -33,22 +33,24 @@ ARCHITECTURE ART_UART OF UART IS
         );
     END COMPONENT;
 
-    SIGNAL UART_TC   : STD_LOGIC;
-    SIGNAL D_CNT     : STD_LOGIC;
-    SIGNAL DESP_D    : STD_LOGIC;
+    SIGNAL UART_TC      : STD_LOGIC;
+    SIGNAL D_CNT        : STD_LOGIC;
+    SIGNAL DESP_D       : STD_LOGIC;
+    SIGNAL UART_TC_HALF : STD_LOGIC;
 
-    SIGNAL CNT       : unsigned (11 DOWNTO 0);
+    SIGNAL CNT          : unsigned (11 DOWNTO 0);
 
-    SIGNAL UART_BITS : unsigned (7 DOWNTO 0);
+    SIGNAL UART_BITS    : unsigned (7 DOWNTO 0);
 BEGIN
     UC : UART_UC PORT MAP(
-        UART_IN    => UART_IN,
-        UART_TC    => UART_TC,
-        D_CNT      => D_CNT,
-        DESP_D     => DESP_D,
-        UART_DONE  => UART_DONE,
-        clk        => clk,
-        UART_RESET => UART_RESET
+        UART_IN      => UART_IN,
+        UART_TC      => UART_TC,
+        UART_TC_HALF => UART_TC_HALF,
+        D_CNT        => D_CNT,
+        DESP_D       => DESP_D,
+        UART_DONE    => UART_DONE,
+        clk          => clk,
+        UART_RESET   => UART_RESET
     );
 
     --DESP_D <= UART_TC;
@@ -71,6 +73,9 @@ BEGIN
 
     UART_TC <= '1' WHEN CNT = "0" ELSE
         '0';
+    UART_TC_HALF <= '1' WHEN CNT = x"0F9" ELSE
+        '0';
+
     -- Registo bits
     PROCESS (clk, UART_RESET)
     BEGIN
