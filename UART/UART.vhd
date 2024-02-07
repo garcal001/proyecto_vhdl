@@ -76,14 +76,17 @@ BEGIN
             CNT <= cnt_dat; -- 4999
 
         ELSIF clk'event AND clk = '1' THEN
-            IF CNT = "0" THEN
-                CNT <= cnt_dat;
-            END IF;
             IF D_CNT = '1' AND CNT > 0 THEN
                 CNT <= CNT - 1;
             END IF;
+            IF CNT = "0" THEN
+                CNT <= cnt_dat;
+            END IF;
         END IF;
     END PROCESS;
+
+    UART_TC <= '1' WHEN CNT = "0" ELSE
+        '0';
 
     DESP_D <= UART_TC;
     -- Registo bits
@@ -104,9 +107,6 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-    UART_TC <= '1' WHEN CNT = "0" ELSE
-        '0';
-
     INC_8 <= UART_TC;
     -- Contador bits
     PROCESS (clk, UART_RESET)
