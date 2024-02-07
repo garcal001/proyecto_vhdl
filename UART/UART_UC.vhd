@@ -13,17 +13,21 @@ ENTITY UART_UC IS
 
     UART_IN    : IN STD_LOGIC;
     UART_TC    : IN STD_LOGIC;
+    bits       : IN unsigned(3 DOWNTO 0);
 
     -- Salidas
     D_CNT      : OUT STD_LOGIC;
     DESP_D     : OUT STD_LOGIC;
-    UART_DONE  : OUT STD_LOGIC
+    UART_DONE  : OUT STD_LOGIC;
+    FIRST      : OUT STD_LOGIC;
+    INC_8      : OUT STD_LOGIC;
+    RESET_8    : OUT STD_LOGIC
   );
 END UART_UC;
 ARCHITECTURE def_UART_UC OF UART_UC IS
   TYPE estado IS (e0, e1, e2, e3, E4);
   SIGNAL EP, ES : estado;
-  SIGNAL bits   : unsigned (3 DOWNTO 0);
+  -- SIGNAL bits   : unsigned (3 DOWNTO 0) := x"0";
 BEGIN
 
   PROCESS (EP, UART_IN, UART_TC)
@@ -31,25 +35,38 @@ BEGIN
   BEGIN
     CASE EP IS
       WHEN e0 => IF (UART_IN = '0') THEN
-        ES <= e1;
+        ES      <= e1;
+        FIRST   <= '1';
+        RESET_8 <= '1';
     END IF;
 
-    WHEN e1 => bits <= x"0";
-    ES              <= e2;
+    WHEN e1 => --bits <= x"0";
+    RESET_8 <= '1';
+    IF (UART_TC = '1') THEN
+      ES <= e2;
+      -- FIRST <= '0';
+    END IF;
 
-    WHEN e2 => IF (UART_TC = '1') THEN
-    ES   <= e3;
-    bits <= bits + 1;
+    WHEN e2 =>
+    RESET_8 <= '0';
+    IF (UART_TC = '1') THEN
+      FIRST <= '0';
+      ES    <= e3;
+      --bits  <= bits + 1;
+    END IF;
+
+    WHEN e3 =>
+    IF (bits > x"7") THEN
+      ES <= e4;
+    ELSE
+      -- INC_8 <= '1';
+      ES <= e2;
+    END IF;
+
+    WHEN e4 => IF (UART_IN = '1') THEN
+    ES        <= e0;
+    UART_DONE <= '1';
   END IF;
-
-  WHEN e3 =>
-  IF (bits = x"9") THEN
-    ES <= e4;
-  ELSE
-    ES <= e2;
-  END IF;
-
-  WHEN e4     => ES     <= e0;
 
   WHEN OTHERS => ES <= ES;
 
@@ -66,13 +83,20 @@ BEGIN
   END IF;
 END PROCESS;
 -- Se�ales de control
-
 -- bits  <= "000" WHEN (EP = e0);
-D_CNT <= '1' WHEN (EP = e2) ELSE
+-- FIRST <= '1' WHEN (EP = e1 OR EP = e0) ELSE
+--   '0';
+D_CNT <= '1' WHEN (EP = e2 OR EP = e1) ELSE
   '0';
 DESP_D <= '1' WHEN (EP = e3) ELSE
   '0';
-UART_DONE <= '1' WHEN (EP = e4) ELSE
-  '0';
+-- RESET_8 <= '1' WHEN (EP = e1) ELSE
+--   '0';
+-- RESET_8 <= '1' WHEN (EP = e1 OR EP = e0) ELSE
+--   '0';
+-- INC_8 <= '1' WHEN (EP = e3) ELSE
+--   '0';
+-- UART_DONE <= '1' WHEN (EP = e4) ELSE
+--   '0';
 
 END def_UART_UC;

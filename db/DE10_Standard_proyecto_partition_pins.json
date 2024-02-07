@@ -36,10 +36,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "LEDR[9]",
-					"strict" : false
-				},
-				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},

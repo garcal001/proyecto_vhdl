@@ -10,23 +10,23 @@ z2
 cModel Technology
 d/home/guillermo
 Euart
-Z0 w1707210289
+Z0 w1707226964
 Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 32
+!i122 143
 Z4 d/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART
 Z5 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd
 Z6 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd
 l0
 L5 1
-VP^I6:c8DVC?3X9A@8g4]M0
-!s100 ?7iNC?d1HblHN36?Y?icJ3
+VL54c8i>GGh5W@JM;C9N=j0
+!s100 MoWHn:SDnFPb0_if6Eblz2
 Z7 OV;C;2020.1;71
 32
-Z8 !s110 1707210983
+Z8 !s110 1707226969
 !i10b 1
-Z9 !s108 1707210983.000000
+Z9 !s108 1707226968.000000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd|
 Z11 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd|
 !i113 1
@@ -36,12 +36,12 @@ Aart_uart
 R1
 R2
 R3
-DEx4 work 4 uart 0 22 P^I6:c8DVC?3X9A@8g4]M0
-!i122 32
-l43
-L18 72
-Vm7<ign_@IEzWKI[Vng[Lj2
-!s100 mLe2aGbdNEiCk<8g<=nzN2
+DEx4 work 4 uart 0 22 L54c8i>GGh5W@JM;C9N=j0
+!i122 143
+l54
+L18 110
+VS2Y1QFK]coY^clRzPkk5g1
+!s100 KeH32PZM6^PPlmQldN>H;1
 R7
 32
 R8
@@ -53,11 +53,11 @@ R11
 R12
 R13
 Euart_tb
-Z14 w1706884267
+Z14 w1707215054
 R3
 R2
 R1
-!i122 34
+!i122 145
 R4
 Z15 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd
 Z16 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd
@@ -69,9 +69,9 @@ R7
 32
 R8
 !i10b 1
-R9
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd|
-Z18 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd|
+Z17 !s108 1707226969.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd|
+Z19 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_tb.vhd|
 !i113 1
 R12
 R13
@@ -79,42 +79,42 @@ Auart_tb_arch
 R3
 R2
 R1
-Z19 DEx4 work 7 uart_tb 0 22 UTiOYj?bE=a3dTl4BbS^d2
-!i122 34
+Z20 DEx4 work 7 uart_tb 0 22 UTiOYj?bE=a3dTl4BbS^d2
+!i122 145
 l29
-Z20 L9 67
-Z21 VCN^VTWB0TzBT<n]IGh7]13
-Z22 !s100 zKC<LGH;h@Iz2<b7Ol;8A3
+Z21 L9 67
+Z22 VmzLXUA:ieJI`;L3hCa6`i3
+Z23 !s100 D`jRBBLRI<UfUCT]0?7Y^1
 R7
 32
 R8
 !i10b 1
-R9
 R17
 R18
+R19
 !i113 1
 R12
 R13
 Euart_uc
-Z23 w1707210887
+Z24 w1707226880
 R1
 R2
 R3
-!i122 33
+!i122 144
 R4
-Z24 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
-Z25 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
+Z25 8/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
+Z26 F/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd
 l0
 L8 1
-V3^86`ZHgG[NQ]0Gf<I11W2
-!s100 KziaeBo@O6@VjS9eH]f6m1
+Vj:z1fISW>4Ah5nN?Yj:L_3
+!s100 Sl_idV`;34_V5iS0_D6Bg2
 R7
 32
 R8
 !i10b 1
-R9
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd|
-Z27 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd|
+R17
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd|
+Z28 !s107 /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd|
 !i113 1
 R12
 R13
@@ -122,19 +122,19 @@ Adef_uart_uc
 R1
 R2
 R3
-DEx4 work 7 uart_uc 0 22 3^86`ZHgG[NQ]0Gf<I11W2
-!i122 33
-l27
-L23 56
-V?kbU04jTaYc`S^e89nVXh3
-!s100 A=I>7]TVEh0=KI:DGL?e:3
+DEx4 work 7 uart_uc 0 22 j:z1fISW>4Ah5nN?Yj:L_3
+!i122 144
+l31
+L27 70
+VzTLjX9N8KW3[kzPn1M`hE3
+!s100 h96[biN@omDYhfMVO3Zl:2
 R7
 32
 R8
 !i10b 1
-R9
-R26
+R17
 R27
+R28
 !i113 1
 R12
 R13
