@@ -5,26 +5,26 @@ USE ieee.numeric_std.ALL;
 ENTITY DE10_Standard_proyecto IS
     PORT (
         -- CLOCK ----------------
-        CLOCK_50 : IN STD_LOGIC;
+        CLOCK_50     : IN STD_LOGIC;
         --  CLOCK2_50   : in    std_logic;
         --  CLOCK3_50   : in    std_logic;
         --  CLOCK4_50   : in    std_logic;
         -- KEY ----------------
-        KEY      : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
+        KEY          : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
         --  KEY         : in    std_logic_vector(3 downto 0);
         -- LEDR ----------------
-        LEDR     : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+        LEDR         : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
         -- SW ----------------
         --  SW          : in    std_logic_vector(9 downto 0);
         -- GPIO-LT24-UART ----------
         -- LCD --
-        -- LT24_LCD_ON  : out   std_logic;
-        -- LT24_RESET_N : out   std_logic;
-        -- LT24_CS_N        : out   std_logic;
-        -- LT24_RD_N        : out   std_logic;
-        -- LT24_RS          : out   std_logic;
-        -- LT24_WR_N        : out   std_logic;
-        -- LT24_D           : out   std_logic_vector(15 downto 0);
+        LT24_LCD_ON  : OUT STD_LOGIC;
+        LT24_RESET_N : OUT STD_LOGIC;
+        LT24_CS_N    : OUT STD_LOGIC;
+        LT24_RD_N    : OUT STD_LOGIC;
+        LT24_RS      : OUT STD_LOGIC;
+        LT24_WR_N    : OUT STD_LOGIC;
+        LT24_D       : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
         -- Touch --
         -- LT24_ADC_PENIRQ_N    : in    std_logic;
         -- LT24_ADC_DOUT        : in    std_logic;
@@ -33,7 +33,7 @@ ENTITY DE10_Standard_proyecto IS
         -- LT24_ADC_DCLK        : out   std_logic;
         -- LT24_ADC_CS_N        : out   std_logic;
         -- UART --
-        UART_RX  : IN STD_LOGIC
+        UART_RX      : IN STD_LOGIC
         -- GPIO default ----------------
         --  GPIO        : inout std_logic_vector(35 downto 0);
         -- CODEC Audio ----------------
@@ -119,6 +119,24 @@ ARCHITECTURE rtl OF DE10_Standard_proyecto IS
     SIGNAL clk, reset, reset_l : STD_LOGIC;
     SIGNAL bits_leds           : unsigned(7 DOWNTO 0);
     SIGNAL done_uart           : STD_LOGIC;
+    SIGNAL UART_IN             : unsigned(7 DOWNTO 0);
+    SIGNAL UART_DONE           : STD_LOGIC;
+    SIGNAL DONE_CURSOR         : STD_LOGIC;
+    SIGNAL DONE_COLOUR         : STD_LOGIC;
+
+    SIGNAL OP_SETCURSOR        : STD_LOGIC;
+    SIGNAL XCOL                : unsigned(7 DOWNTO 0);
+    SIGNAL YROW                : unsigned (8 DOWNTO 0);
+    SIGNAL OP_DRAWCOLOUR       : STD_LOGIC;
+    SIGNAL RGB                 : unsigned(15 DOWNTO 0);
+    SIGNAL NUM_PIX             : unsigned (16 DOWNTO 0);
+
+    SIGNAL cs_n                : STD_LOGIC;
+    SIGNAL wr_n                : STD_LOGIC;
+    SIGNAL rs                  : STD_LOGIC;
+    SIGNAL d                   : unsigned (15 DOWNTO 0);
+    SIGNAL init_done           : STD_LOGIC;
+    SIGNAL ciclos              : unsigned (18 DOWNTO 0);
 
     COMPONENT UART IS
         PORT (
@@ -133,6 +151,76 @@ ARCHITECTURE rtl OF DE10_Standard_proyecto IS
         );
     END COMPONENT;
 
+    COMPONENT GENERAL IS
+        PORT (
+            -- Entradas 
+            UART_IN       : IN unsigned(7 DOWNTO 0);
+            UART_DONE     : IN STD_LOGIC;
+            DONE_CURSOR   : IN STD_LOGIC;
+            DONE_COLOUR   : IN STD_LOGIC;
+
+            clk           : IN STD_LOGIC;
+            RESET         : IN STD_LOGIC;
+
+            -- Salidas 
+            OP_SETCURSOR  : OUT STD_LOGIC;
+            XCOL          : OUT unsigned(7 DOWNTO 0);
+            YROW          : OUT unsigned (8 DOWNTO 0);
+            OP_DRAWCOLOUR : OUT STD_LOGIC;
+            RGB           : OUT unsigned(15 DOWNTO 0);
+            NUM_PIX       : OUT unsigned (16 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    COMPONENT LCD_ctrl
+        PORT (
+            -- Entradas
+            LT24_Init_Done : IN STD_LOGIC;
+            OP_SETCURSOR   : IN STD_LOGIC;
+            XCOL           : IN unsigned (7 DOWNTO 0);
+            YROW           : IN unsigned (8 DOWNTO 0);
+            OP_DRAWCOLOUR  : IN STD_LOGIC;
+            RGB            : IN unsigned (15 DOWNTO 0);
+            NUMPIX         : IN unsigned (16 DOWNTO 0);
+
+            CLK            : IN STD_LOGIC;
+            RESET_L        : IN STD_LOGIC;
+
+            -- Salidas
+            DONE_CURSOR    : OUT STD_LOGIC;
+            DONE_COLOUR    : OUT STD_LOGIC;
+            LCD_CS_N       : OUT STD_LOGIC;
+            LCD_WR_N       : OUT STD_LOGIC;
+            LCD_RS         : OUT STD_LOGIC;
+            LCD_DATA       : OUT unsigned (15 DOWNTO 0)
+        );
+    END COMPONENT;
+
+    -- LCD_setup
+    COMPONENT LT24Setup
+        PORT (
+            -- CLOCK and Reset_l ----------------
+            clk            : IN STD_LOGIC;
+            reset_l        : IN STD_LOGIC;
+
+            LT24_LCD_ON    : OUT STD_LOGIC;
+            LT24_RESET_N   : OUT STD_LOGIC;
+            LT24_CS_N      : OUT STD_LOGIC;
+            LT24_RS        : OUT STD_LOGIC;
+            LT24_WR_N      : OUT STD_LOGIC;
+            LT24_RD_N      : OUT STD_LOGIC;
+            LT24_D         : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+            LT24_CS_N_Int  : IN STD_LOGIC;
+            LT24_RS_Int    : IN STD_LOGIC;
+            LT24_WR_N_Int  : IN STD_LOGIC;
+            LT24_RD_N_Int  : IN STD_LOGIC;
+            LT24_D_Int     : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+
+            LT24_Init_Done : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
 BEGIN
     UART_MAP : UART PORT MAP(
         UART_IN    => UART_RX,
@@ -142,6 +230,71 @@ BEGIN
         -- output
         UART_OUT   => bits_leds,
         UART_DONE  => done_uart
+    );
+
+    GENERAL_MAP : GENERAL PORT MAP(
+        -- Entradas 
+        -- UART
+        UART_IN       => bits_leds,
+        UART_DONE     => done_uart,
+        -- 
+        DONE_CURSOR   => DONE_CURSOR,
+        DONE_COLOUR   => DONE_COLOUR,
+
+        clk           => clk,
+        RESET         => RESET,
+
+        -- Salidas 
+        OP_SETCURSOR  => OP_SETCURSOR,
+        XCOL          => XCOL,
+        YROW          => YROW,
+        OP_DRAWCOLOUR => OP_DRAWCOLOUR,
+        RGB           => RGB,
+        NUM_PIX       => NUM_PIX
+    );
+
+    LCD_CTRL_MAP : LCD_CTRL PORT MAP(
+        -- Entradas
+        LT24_Init_Done => init_done,
+        OP_SETCURSOR   => OP_SETCURSOR,
+        XCOL           => XCOL,
+        YROW           => YROW,
+        OP_DRAWCOLOUR  => OP_DRAWCOLOUR,
+        RGB            => rgb,
+        NUMPIX         => NUM_PIX,
+
+        CLK            => clk,
+        RESET_L        => RESET,
+
+        -- Salidas
+        DONE_CURSOR    => DONE_CURSOR,
+        DONE_COLOUR    => DONE_COLOUR,
+        LCD_CS_N       => cs_n,
+        LCD_WR_N       => wr_n,
+        LCD_RS         => rs,
+        LCD_DATA       => d
+    );
+
+    LCD_SETUP_MAP : LT24Setup PORT MAP(
+        -- CLOCK and Reset_l ----------------
+        clk            => clk,
+        reset_l        => reset_l,
+
+        LT24_LCD_ON    => LT24_LCD_ON,
+        LT24_RESET_N   => LT24_RESET_N,
+        LT24_CS_N      => LT24_CS_N,
+        LT24_RS        => LT24_RS,
+        LT24_WR_N      => LT24_WR_N,
+        LT24_RD_N      => LT24_RD_N,
+        LT24_D         => LT24_D,
+        LT24_Init_Done => init_done,
+
+        LT24_CS_N_Int  => cs_n,
+        LT24_RS_Int    => rs,
+        LT24_WR_N_Int  => wr_n,
+        LT24_RD_N_Int  => '1',
+        LT24_D_Int     => STD_LOGIC_VECTOR(d)
+
     );
 
     LEDR    <= done_uart & '0' & STD_LOGIC_VECTOR(bits_leds);

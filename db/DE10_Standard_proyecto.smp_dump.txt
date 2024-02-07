@@ -1,4 +1,62 @@
 
+State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3
+Name ep3.e_End_INIT_LT24 ep3.e_End_Send_CMD_DATA ep3.e_wait_sendCMD_DATA ep3.e_read_CMD_DATA3 ep3.e_read_CMD_DATA2 ep3.e_read_CMD_DATA ep3.e_init3 
+ep3.e_init3 0 0 0 0 0 0 0 
+ep3.e_read_CMD_DATA 0 0 0 0 0 1 1 
+ep3.e_read_CMD_DATA2 0 0 0 0 1 0 1 
+ep3.e_read_CMD_DATA3 0 0 0 1 0 0 1 
+ep3.e_wait_sendCMD_DATA 0 0 1 0 0 0 1 
+ep3.e_End_Send_CMD_DATA 0 1 0 0 0 0 1 
+ep3.e_End_INIT_LT24 1 0 0 0 0 0 1 
+
+State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2
+Name ep2.e_End_CMD_DATA ep2.e_wait1_sendByte ep2.e_send_CMD_DATA2 ep2.e_send_CMD_DATA ep2.e_init2 
+ep2.e_init2 0 0 0 0 0 
+ep2.e_send_CMD_DATA 0 0 0 1 1 
+ep2.e_send_CMD_DATA2 0 0 1 0 1 
+ep2.e_wait1_sendByte 0 1 0 0 1 
+ep2.e_End_CMD_DATA 1 0 0 0 1 
+
+State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep
+Name ep.e_done ep.e_wait2 ep.e_wait1 ep.e_wait0 ep.e_wait00 ep.e_init 
+ep.e_init 0 0 0 0 0 0 
+ep.e_wait00 0 0 0 0 1 1 
+ep.e_wait0 0 0 0 1 0 1 
+ep.e_wait1 0 0 1 0 0 1 
+ep.e_wait2 0 1 0 0 0 1 
+ep.e_done 1 0 0 0 0 1 
+
+State Machine - |DE10_Standard_proyecto|LCD_ctrl:LCD_CTRL_MAP|LCD_ctrl_UC:UC|EP
+Name EP.e14 EP.e13 EP.e12 EP.e11 EP.e10 EP.e9 EP.e8 EP.e7 EP.e6 EP.e5 EP.e4 EP.e3 EP.e2 EP.e1 EP.e0 
+EP.e0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+EP.e1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+EP.e2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+EP.e3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+EP.e4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+EP.e5 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+EP.e6 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+EP.e7 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+EP.e8 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+EP.e9 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+EP.e10 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+EP.e11 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+EP.e12 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+EP.e13 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+EP.e14 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP
+Name EP.e9 EP.e8 EP.e7 EP.e6 EP.e5 EP.e4 EP.e3 EP.e2 EP.e1 EP.e0 
+EP.e0 0 0 0 0 0 0 0 0 0 0 
+EP.e1 0 0 0 0 0 0 0 0 1 1 
+EP.e2 0 0 0 0 0 0 0 1 0 1 
+EP.e3 0 0 0 0 0 0 1 0 0 1 
+EP.e4 0 0 0 0 0 1 0 0 0 1 
+EP.e5 0 0 0 0 1 0 0 0 0 1 
+EP.e6 0 0 0 1 0 0 0 0 0 1 
+EP.e7 0 0 1 0 0 0 0 0 0 1 
+EP.e8 0 1 0 0 0 0 0 0 0 1 
+EP.e9 1 0 0 0 0 0 0 0 0 1 
+
 State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP
 Name EP.E4 EP.e3 EP.e2 EP.e1 EP.e0 
 EP.e0 0 0 0 0 0 
