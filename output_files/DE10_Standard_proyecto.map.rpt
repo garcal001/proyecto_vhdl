@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_Standard_proyecto
-Wed Feb  7 12:16:20 2024
+Wed Feb  7 12:34:21 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -53,7 +53,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb  7 12:16:20 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed Feb  7 12:34:21 2024       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; DE10_Standard_proyecto                      ;
 ; Top-level Entity Name           ; DE10_Standard_proyecto                      ;
@@ -552,12 +552,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 17                          ;
 ;     ENA               ; 8                           ;
 ;     ENA CLR           ; 16                          ;
-; arriav_lcell_comb     ; 62                          ;
+; arriav_lcell_comb     ; 61                          ;
 ;     arith             ; 16                          ;
 ;         1 data inputs ; 16                          ;
-;     normal            ; 46                          ;
+;     normal            ; 45                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 5                           ;
+;         1 data inputs ; 4                           ;
 ;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 8                           ;
 ;         4 data inputs ; 16                          ;
@@ -566,7 +566,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.40                        ;
-; Average LUT depth     ; 3.54                        ;
+; Average LUT depth     ; 3.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -668,7 +668,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Feb  7 12:16:08 2024
+    Info: Processing started: Wed Feb  7 12:34:10 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file DE10_Standard_proyecto.vhd
@@ -712,7 +712,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.02.07.12:16:16 Progress: Loading sld24255213/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.02.07.12:34:17 Progress: Loading sld24255213/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -755,9 +755,9 @@ Info (21057): Implemented 1520 device resources after synthesis - the final reso
     Info (21061): Implemented 1166 logic cells
     Info (21064): Implemented 336 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 563 megabytes
-    Info: Processing ended: Wed Feb  7 12:16:20 2024
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 562 megabytes
+    Info: Processing ended: Wed Feb  7 12:34:21 2024
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:25
 
 

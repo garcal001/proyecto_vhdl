@@ -91,6 +91,6 @@ BEGIN
     '0';
   RESET_8 <= '1' WHEN (EP = e0 AND UART_IN = '0') OR (EP = e1) ELSE
     '0';
-  UART_DONE <= '1' WHEN (EP = e0) ELSE
+  UART_DONE <= '1' WHEN (EP = e4) ELSE
     '0';
 END def_UART_UC;

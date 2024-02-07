@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Feb  7 12:17:06 2024
+Fitter Status : Successful - Wed Feb  7 12:35:10 2024
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : DE10_Standard_proyecto
 Top-level Entity Name : DE10_Standard_proyecto
 Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 492 / 41,910 ( 1 % )
-Total registers : 871
+Logic utilization (in ALMs) : 476 / 41,910 ( 1 % )
+Total registers : 865
 Total pins : 13 / 499 ( 3 % )
 Total virtual pins : 0
 Total block memory bits : 2,752,512 / 5,662,720 ( 49 % )

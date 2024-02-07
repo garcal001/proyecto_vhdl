@@ -1,5 +1,5 @@
 Assembler report for DE10_Standard_proyecto
-Wed Feb  7 12:17:14 2024
+Wed Feb  7 12:35:18 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb  7 12:17:14 2024 ;
+; Assembler Status      ; Successful - Wed Feb  7 12:35:18 2024 ;
 ; Revision Name         ; DE10_Standard_proyecto                ;
 ; Top-level Entity Name ; DE10_Standard_proyecto                ;
 ; Family                ; Cyclone V                             ;
@@ -78,8 +78,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------------------+
 ; Option         ; Setting                             ;
 +----------------+-------------------------------------+
-; JTAG usercode  ; 0x0776D2D8                          ;
-; Checksum       ; 0x0776D2D8                          ;
+; JTAG usercode  ; 0x0776F7FB                          ;
+; Checksum       ; 0x0776F7FB                          ;
 +----------------+-------------------------------------+
 
 
@@ -89,12 +89,12 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Wed Feb  7 12:17:08 2024
+    Info: Processing started: Wed Feb  7 12:35:12 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 574 megabytes
-    Info: Processing ended: Wed Feb  7 12:17:14 2024
+    Info: Peak virtual memory: 575 megabytes
+    Info: Processing ended: Wed Feb  7 12:35:18 2024
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:06
 
