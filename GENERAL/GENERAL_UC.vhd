@@ -52,8 +52,6 @@ BEGIN
 				END IF;
 
 			WHEN e2 =>
-				-- RGB     <= X"0000";
-				-- NUM_PIX <= "10010110000000000";
 				ES <= e3;
 			WHEN e3 =>
 				IF (DONE_COLOUR = '1') THEN
@@ -70,8 +68,6 @@ BEGIN
 					ES <= e5;
 				END IF;
 			WHEN e6 =>
-				-- RGB     <= X"ffff";
-				-- NUM_PIX <= "0" & X"000A";
 				ES <= e7;
 			WHEN e7 =>
 				IF (DONE_COLOUR = '1') THEN
@@ -85,6 +81,7 @@ BEGIN
 				ELSE
 					ES <= e4;
 				END IF;
+
 			WHEN e9 =>
 				ES                <= e9;
 
@@ -114,8 +111,13 @@ BEGIN
 	LD_POS <= '1' WHEN (EP = e4) ELSE
 		'0';
 
-	RGB <= X"FFFF" WHEN (EP = e6) ELSE
-		X"0000";
+	-- RGB <= X"FFFF" WHEN (EP = e6) ELSE
+	-- 	X"0000";
+	WITH EP SELECT RGB <=
+		X"FFFF" WHEN e6,
+		X"FFFF" WHEN e7,
+		X"0000" WHEN OTHERS;
+
 	WITH EP SELECT NUM_PIX <=
 		"10010110000000000" WHEN e2,
 		"0" & X"000A" WHEN e6,

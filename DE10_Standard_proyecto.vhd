@@ -243,7 +243,7 @@ BEGIN
         DONE_COLOUR   => DONE_COLOUR,
 
         clk           => clk,
-        RESET         => RESET,
+        RESET         => reset,
         INIT_DONE     => init_done,
 
         -- Salidas 
@@ -266,7 +266,7 @@ BEGIN
         NUMPIX         => NUM_PIX,
 
         CLK            => clk,
-        RESET_L        => RESET,
+        RESET_L        => reset,
 
         -- Salidas
         DONE_CURSOR    => DONE_CURSOR,

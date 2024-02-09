@@ -105,14 +105,17 @@ BEGIN
             YROW_OFF_DATA <= "101";
 
         ELSIF clk'event AND clk = '1' THEN
+            IF RESET_BOLA = '1' THEN
+                YROW_OFF_DATA <= "101";
+            END IF;
             IF DEC_OFF = '1' AND YROW_OFF_DATA > 0 THEN
                 YROW_OFF_DATA <= YROW_OFF_DATA - 1;
             END IF;
-            IF RESET_BOLA = '0' THEN
-                YROW_OFF_DATA <= "101";
-            END IF;
         END IF;
     END PROCESS;
+
+    TC_OFF <= '1' WHEN YROW_OFF_DATA = "0" ELSE
+        '0';
 
     -- Registro XCOL
     PROCESS (CLK, RESET)
