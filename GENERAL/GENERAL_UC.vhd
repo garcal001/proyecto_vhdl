@@ -17,7 +17,6 @@ ENTITY GENERAL_UC IS
 
 		-- Salidas
 		RESET_BOLA    : OUT STD_LOGIC;
-		CL_LCD_DATA   : OUT STD_LOGIC;
 		OP_SETCURSOR  : OUT STD_LOGIC;
 		OP_DRAWCOLOUR : OUT STD_LOGIC;
 		DEC_OFF       : OUT STD_LOGIC;
@@ -35,7 +34,7 @@ ARCHITECTURE def_GENERAL_UC OF GENERAL_UC IS
 
 BEGIN
 
-	PROCESS (EP, DONE_CURSOR, DONE_COLOUR, TC_OFF)
+	PROCESS (EP, DONE_CURSOR, DONE_COLOUR, TC_OFF, INIT_DONE)
 		-- proceso que determina el ES
 	BEGIN
 		CASE EP IS
@@ -53,9 +52,9 @@ BEGIN
 				END IF;
 
 			WHEN e2 =>
-				RGB     <= X"0000";
-				NUM_PIX <= "10010110000000000";
-				ES      <= e3;
+				-- RGB     <= X"0000";
+				-- NUM_PIX <= "10010110000000000";
+				ES <= e3;
 			WHEN e3 =>
 				IF (DONE_COLOUR = '1') THEN
 					ES <= e4;
@@ -71,9 +70,9 @@ BEGIN
 					ES <= e5;
 				END IF;
 			WHEN e6 =>
-				RGB     <= X"ffff";
-				NUM_PIX <= "0" & X"000A";
-				ES      <= e7;
+				-- RGB     <= X"ffff";
+				-- NUM_PIX <= "0" & X"000A";
+				ES <= e7;
 			WHEN e7 =>
 				IF (DONE_COLOUR = '1') THEN
 					ES <= e8;
@@ -87,7 +86,9 @@ BEGIN
 					ES <= e4;
 				END IF;
 			WHEN e9 =>
-				ES <= e9;
+				ES                <= e9;
+
+			WHEN OTHERS => ES <= e0;
 		END CASE;
 	END PROCESS;
 
@@ -104,19 +105,22 @@ BEGIN
 
 	RESET_BOLA <= '1' WHEN (EP = e0) ELSE
 		'0';
-	OP_SETCURSOR <= '1' WHEN (EP = e1) ELSE
+	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e5) ELSE
 		'0';
-	OP_DRAWCOLOUR <= '1' WHEN (EP = e3) ELSE
+	OP_DRAWCOLOUR <= '1' WHEN (EP = e3 OR EP = e7) ELSE
 		'0';
 	DEC_OFF <= '1' WHEN (EP = e8) ELSE
 		'0';
 	LD_POS <= '1' WHEN (EP = e4) ELSE
 		'0';
 
-	-- RGB      <= X"0000" WHEN (EP = e2);
-	-- RGB      <= X"FFFF" WHEN (EP = e6);
-	-- NUM_PIX  <= "10010110000000000" WHEN (EP = e2);
-	-- NUM_PIX  <= "0" & X"000A" WHEN (EP = e6);
+	RGB <= X"FFFF" WHEN (EP = e6) ELSE
+		X"0000";
+	WITH EP SELECT NUM_PIX <=
+		"10010110000000000" WHEN e2,
+		"0" & X"000A" WHEN e6,
+		"0" & X"000A" WHEN e7,
+		"0" & X"0000" WHEN OTHERS;
 
 	REG_XCOL <= X"64" WHEN (EP = e4);
 	REG_YROW <= "0" & X"64" WHEN (EP = e4);

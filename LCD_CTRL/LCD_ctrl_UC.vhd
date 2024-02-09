@@ -39,13 +39,14 @@ ENTITY LCD_ctrl_UC IS
 		DONE_COLOUR    : OUT STD_LOGIC
 	);
 END LCD_ctrl_UC;
+
 ARCHITECTURE def_LCD_ctrl_UC OF LCD_ctrl_UC IS
 	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14);
 	SIGNAL EP, ES : estado;
 
 BEGIN
 
-	PROCESS (EP, LT24_Init_Done, OP_SETCURSOR, OP_DRAWCOLOUR, QDAT, ENDPIX)
+	PROCESS (EP, LT24_Init_Done, OP_SETCURSOR, OP_DRAWCOLOUR, QDAT, ENDPIX, D0, D1, D2, D3, D4, D5, D6)
 		-- proceso que determina el ES
 	BEGIN
 		CASE EP IS
@@ -81,11 +82,13 @@ BEGIN
 	ELSE
 		ES <= e6;
 	END IF;
-	WHEN e10 => ES <= e0;
-	WHEN e11 => ES <= e0;
-	WHEN e12 => ES <= e2;
-	WHEN e13 => ES <= e2;
-	WHEN e14 => ES <= e2;
+	WHEN e10    => ES    <= e0;
+	WHEN e11    => ES    <= e0;
+	WHEN e12    => ES    <= e2;
+	WHEN e13    => ES    <= e2;
+	WHEN e14    => ES    <= e2;
+
+	WHEN OTHERS => ES <= e0;
 
 END CASE;
 END PROCESS;

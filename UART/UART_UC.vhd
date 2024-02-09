@@ -20,7 +20,7 @@ ENTITY UART_UC IS
     DESP_D     : OUT STD_LOGIC;
     UART_DONE  : OUT STD_LOGIC;
     FIRST      : OUT STD_LOGIC;
-    INC_8      : OUT STD_LOGIC := '0';
+    INC_8      : OUT STD_LOGIC := '0'; -- El programa da el siguiente warning: Warning (10540): VHDL Signal Declaration warning at UART_UC.vhd(23): used explicit default value for signal "INC_8" because signal was never assigned a value
     RESET_8    : OUT STD_LOGIC
   );
 END UART_UC;

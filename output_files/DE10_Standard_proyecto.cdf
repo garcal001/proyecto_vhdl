@@ -1,4 +1,4 @@
-/* Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition */
+/* Quartus Prime Version 18.1.1 Build 646 04/11/2019 SJ Standard Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSXFC6D6F31) Path("/home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/output_files/") File("DE10_Standard_proyecto.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSXFC6D6F31) Path("C:/Users/ehu/VHDL/proyecto_vhdl/output_files/") File("DE10_Standard_proyecto.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

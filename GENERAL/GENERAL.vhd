@@ -39,7 +39,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
             -- Salidas
             RESET_BOLA    : OUT STD_LOGIC;
-            CL_LCD_DATA   : OUT STD_LOGIC;
+            --CL_LCD_DATA   : OUT STD_LOGIC;
             OP_SETCURSOR  : OUT STD_LOGIC;
             OP_DRAWCOLOUR : OUT STD_LOGIC;
             DEC_OFF       : OUT STD_LOGIC;
@@ -57,11 +57,11 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
     SIGNAL YROW_DATA     : unsigned(8 DOWNTO 0) := "0" & x"64"; -- 100
     SIGNAL YROW_OFF_DATA : unsigned(2 DOWNTO 0) := "000";
 
-    SIGNAL TC_OFF        : STD_LOGIC;
+    SIGNAL TC_OFF        : STD_LOGIC            := '0'; -- Cambiado por warning falta comprobar
 
     -- Salidas
     SIGNAL RESET_BOLA    : STD_LOGIC;
-    SIGNAL CL_LCD_DATA   : STD_LOGIC;
+    --SIGNAL CL_LCD_DATA   : STD_LOGIC;
     -- SIGNAL OP_SETCURSOR  : STD_LOGIC;
     -- SIGNAL OP_DRAWCOLOUR : STD_LOGIC;
     SIGNAL DEC_OFF       : STD_LOGIC;
@@ -83,7 +83,7 @@ BEGIN
 
         -- Salidas
         RESET_BOLA    => RESET_BOLA,
-        CL_LCD_DATA   => CL_LCD_DATA,
+        -- CL_LCD_DATA   => CL_LCD_DATA,
         OP_SETCURSOR  => OP_SETCURSOR,
         OP_DRAWCOLOUR => OP_DRAWCOLOUR,
         DEC_OFF       => DEC_OFF,

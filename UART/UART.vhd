@@ -70,7 +70,7 @@ BEGIN
         x"09c3";
 
     -- contador
-    PROCESS (clk, UART_RESET)
+    PROCESS (clk, UART_RESET, cnt_dat)
     BEGIN
         IF UART_RESET = '1' THEN
             CNT <= cnt_dat; -- 4999
