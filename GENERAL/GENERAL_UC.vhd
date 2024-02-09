@@ -13,6 +13,7 @@ ENTITY GENERAL_UC IS
 
 		clk           : IN STD_LOGIC;
 		RESET         : IN STD_LOGIC;
+		INIT_DONE     : IN STD_LOGIC;
 
 		-- Salidas
 		RESET_BOLA    : OUT STD_LOGIC;
@@ -38,7 +39,12 @@ BEGIN
 		-- proceso que determina el ES
 	BEGIN
 		CASE EP IS
-			WHEN e0 => es <= E1;
+			WHEN e0 =>
+				IF (INIT_DONE = '1') THEN
+					ES <= e1;
+				ELSE
+					ES <= e0;
+				END IF;
 			WHEN e1 =>
 				IF (DONE_CURSOR = '1') THEN
 					ES <= e2;
@@ -47,7 +53,7 @@ BEGIN
 				END IF;
 
 			WHEN e2 =>
-				RGB     <= X"ffff";
+				RGB     <= X"0000";
 				NUM_PIX <= "10010110000000000";
 				ES      <= e3;
 			WHEN e3 =>
@@ -56,7 +62,8 @@ BEGIN
 				ELSE
 					ES <= e3;
 				END IF;
-			WHEN e4 => ES <= e5;
+			WHEN e4 =>
+				ES <= e5;
 			WHEN e5 =>
 				IF (DONE_CURSOR = '1') THEN
 					ES <= e6;
@@ -64,7 +71,7 @@ BEGIN
 					ES <= e5;
 				END IF;
 			WHEN e6 =>
-				RGB     <= X"0000";
+				RGB     <= X"ffff";
 				NUM_PIX <= "0" & X"000A";
 				ES      <= e7;
 			WHEN e7 =>
@@ -79,7 +86,8 @@ BEGIN
 				ELSE
 					ES <= e4;
 				END IF;
-			WHEN e9 => ES <= e9;
+			WHEN e9 =>
+				ES <= e9;
 		END CASE;
 	END PROCESS;
 

@@ -12,6 +12,7 @@ ENTITY GENERAL IS
 
         clk           : IN STD_LOGIC;
         RESET         : IN STD_LOGIC;
+        INIT_DONE     : IN STD_LOGIC;
 
         -- Salidas 
         OP_SETCURSOR  : OUT STD_LOGIC;
@@ -34,6 +35,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
             clk           : IN STD_LOGIC;
             RESET         : IN STD_LOGIC;
+            INIT_DONE     : IN STD_LOGIC;
 
             -- Salidas
             RESET_BOLA    : OUT STD_LOGIC;
@@ -67,6 +69,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
     SIGNAL REG_XCOL      : unsigned(7 DOWNTO 0);
     SIGNAL REG_YROW      : unsigned(8 DOWNTO 0);
     SIGNAL LD_POS        : STD_LOGIC;
+
 BEGIN
     UC : GENERAL_UC PORT MAP(
         -- Entradas
@@ -76,6 +79,7 @@ BEGIN
 
         clk           => clk,
         RESET         => RESET,
+        INIT_DONE     => INIT_DONE,
 
         -- Salidas
         RESET_BOLA    => RESET_BOLA,

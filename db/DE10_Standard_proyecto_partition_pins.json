@@ -120,15 +120,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "UART_RX",
-					"strict" : false
-				},
-				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
 					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "UART_RX",
 					"strict" : false
 				}
 			]

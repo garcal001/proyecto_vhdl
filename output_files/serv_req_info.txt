@@ -1,0 +1,18 @@
+<internal_error>
+<sub_system>ERR</sub_system>
+<callstack>
+	0x7cf58e7ba286: ccl_err + 0x8286 (_ZN15ERR_STACKWALKER15get_stack_traceEPPKviiPv + 0xd8)
+	0x7cf58e7bd535: ccl_err + 0xb535 (_Z14err_terminatorv + 0x5a)
+	0x7cf59eb3eae6: jtag_client + 0x82ae6 (_ZN10__cxxabiv111__terminateEPFvvE + 0x6)
+	0x7cf59eb3eb31: jtag_client + 0x82b31
+	0x7cf59eb3ec38: jtag_client + 0x82c38
+	0x7cf58e7bd3ef: ccl_err + 0xb3ef (err_sigaction_handler + 0x7a)
+	0x7cf585e5c710: c.so.6 + 0x3a710
+	0x7cf57fcc48c4: Qt5Widgets.so.5 + 0x4c48c4 (_ZNK10QCompleter5popupEv + 0x4)
+	0x7cf570f38fd0:
+</callstack>
+<error>*** Fatal Error: Unhandled Exception</error>
+<date>Fri Feb  9 10:36:31 2024
+</date>
+<version>Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition</version>
+</internal_error>

@@ -161,6 +161,7 @@ ARCHITECTURE rtl OF DE10_Standard_proyecto IS
 
             clk           : IN STD_LOGIC;
             RESET         : IN STD_LOGIC;
+            INIT_DONE     : IN STD_LOGIC;
 
             -- Salidas 
             OP_SETCURSOR  : OUT STD_LOGIC;
@@ -243,6 +244,7 @@ BEGIN
 
         clk           => clk,
         RESET         => RESET,
+        INIT_DONE     => init_done,
 
         -- Salidas 
         OP_SETCURSOR  => OP_SETCURSOR,
