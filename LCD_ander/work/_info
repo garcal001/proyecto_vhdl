@@ -1,0 +1,155 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Elcd_ctrl
+Z0 w1707480436
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/ehu/VHDL/Modelsim/LCD_ander
+Z5 8C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd
+Z6 FC:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd
+l0
+L5
+VCb]_lTRTMHgODmLl3V9LY0
+!s100 CfM[=:F;8ClICX3i[VbMc3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1707483064
+!i10b 1
+Z9 !s108 1707483063.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd|
+Z11 !s107 C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Adef_lcd_ctrl
+R1
+R2
+R3
+DEx4 work 8 lcd_ctrl 0 22 Cb]_lTRTMHgODmLl3V9LY0
+l104
+L29
+V@9e1OPQZ:UNSXKAdj7=Pa3
+!s100 2=IlRM<kfX3f9z^Jk[N[W2
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Elcd_ctrl_tb
+Z14 w1707483058
+R3
+R2
+R1
+R4
+Z15 8C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd
+Z16 FC:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd
+l0
+L5
+VS]o]BL60^EJTHjJF6RMZE0
+!s100 8>VR<58=;aKQCLLS[]zGf2
+R7
+32
+R8
+!i10b 1
+Z17 !s108 1707483064.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd|
+Z19 !s107 C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd|
+!i113 1
+R12
+R13
+Alcd_ctrl_tb_arch
+R3
+R2
+R1
+Z20 DEx4 work 11 lcd_ctrl_tb 0 22 S]o]BL60^EJTHjJF6RMZE0
+l53
+L9
+VIV:bfQdVk8@:Mh=33VcPd3
+!s100 87=E24l43XDi2W<WHkBFh0
+R7
+32
+R8
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R12
+R13
+Elcd_ctrl_uc
+Z21 w1707480622
+R1
+R2
+R3
+R4
+Z22 8C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd
+Z23 FC:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd
+l0
+L7
+V9B_c1ch9:GJZ_l2BWSCl50
+!s100 H_ASH`9TIV1`9G_7R5AMi1
+R7
+32
+Z24 !s110 1707483063
+!i10b 1
+R9
+Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd|
+Z26 !s107 C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd|
+!i113 1
+R12
+R13
+Adef_lcd_ctrl_uc
+R1
+R2
+R3
+DEx4 work 11 lcd_ctrl_uc 0 22 9B_c1ch9:GJZ_l2BWSCl50
+l46
+L42
+Vk3PdgjaAU6]hOlR9mA0`=0
+!s100 _KXP8XRDP16H>GBFA=JC03
+R7
+32
+R24
+!i10b 1
+R9
+R25
+R26
+!i113 1
+R12
+R13
+Epingpong_ku
+w1705676072
+R1
+R2
+R3
+dC:/Users/ehu/VHDL/LCD
+8C:\Users\ehu\VHDL\LCD\LCD_ctrl_UC.vhd
+FC:\Users\ehu\VHDL\LCD\LCD_ctrl_UC.vhd
+l0
+L7
+VHKo=kQSZ_BPUUk6OcaSfO0
+!s100 `bJj:3W`6H3zC?ziWlV<D2
+R7
+32
+!s110 1705676186
+!i10b 1
+!s108 1705676186.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:\Users\ehu\VHDL\LCD\LCD_ctrl_UC.vhd|
+!s107 C:\Users\ehu\VHDL\LCD\LCD_ctrl_UC.vhd|
+!i113 1
+R12
+R13

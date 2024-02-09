@@ -1,0 +1,28 @@
+C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_UC.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity LCD_ctrl_UC
+-- Compiling architecture def_LCD_ctrl_UC of LCD_ctrl_UC
+
+} {} {}} C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity LCD_ctrl
+-- Compiling architecture def_LCD_ctrl of LCD_ctrl
+
+} {} {}} C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/ehu/VHDL/Modelsim/LCD_ander/LCD_ctrl_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity LCD_ctrl_tb
+-- Compiling architecture LCD_ctrl_tb_arch of LCD_ctrl_tb
+
+} {} {}}
