@@ -127,10 +127,11 @@ BEGIN
 
 	CL_LCD_DATA <= '1' WHEN (EP = e0 OR EP = e1 OR EP = e14) ELSE
 		'0';
-	LD_DRAW   <= '1' WHEN (EP = e14);
-	LD_CURSOR <= '1' WHEN (EP = e0) ELSE
+	LD_DRAW <= '1' WHEN (EP = e14) ELSE
 		'0';
-	CL_DAT <= '1' WHEN (EP = e0) ELSE
+	LD_CURSOR <= '1' WHEN (EP = e1) ELSE
+		'0';
+	CL_DAT <= '1' WHEN (EP = e1) ELSE
 		'0';
 	RSCOM <= '1' WHEN (EP = e1 OR EP = e14 OR EP = e12) ELSE
 		'0';

@@ -141,7 +141,7 @@ BEGIN
 	BEGIN
 		IF RESET_L = '1' THEN
 			RXCOL <= x"00";
-			ELSIF CLK'event AND CLK = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
 			IF LD_CURSOR = '1' THEN
 				RXCOL <= XCOL;
 			END IF;
@@ -153,7 +153,7 @@ BEGIN
 	BEGIN
 		IF RESET_L = '1' THEN
 			RYROW <= "000000000";
-			ELSIF CLK'event AND CLK = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
 			IF LD_CURSOR = '1' THEN
 				RYROW <= YROW;
 			END IF;
@@ -165,7 +165,7 @@ BEGIN
 	BEGIN
 		IF RESET_L = '1' THEN
 			RRGB <= x"0000";
-			ELSIF CLK'event AND CLK = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
 			IF LD_DRAW = '1' THEN
 				RRGB <= RGB;
 			END IF;
@@ -177,29 +177,34 @@ BEGIN
 	BEGIN
 		IF RESET_l = '1' THEN
 			CNT <= "00000000000000000";
-			ELSIF CLK'event AND CLK = '1' THEN
-			IF LD_DRAW = '1' THEN
-				CNT <= NUMPIX;
-				ELSIF DEC_PIX = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
+			IF DEC_PIX = '1' THEN
 				CNT <= CNT - 1;
+			ELSIF LD_DRAW = '1' THEN
+				CNT <= NUMPIX;
 			END IF;
+			-- IF LD_DRAW = '1' THEN
+			-- 	CNT <= NUMPIX;
+			-- ELSIF DEC_PIX = '1' THEN
+			-- 	CNT <= CNT - 1;
+			-- END IF;
 		END IF;
 	END PROCESS;
 
 	ENDPIX <= '1' WHEN CNT = "00000000000000000" ELSE
-	'0';
+		'0';
 
 	-- Contador data
 	PROCESS (CLK, RESET_L)
 	BEGIN
 		IF RESET_L = '1' THEN
 			QDAT <= "000";
-			ELSIF CLK'event AND CLK = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
 			IF LD_2C = '1' THEN
 				QDAT <= "110";
-				ELSIF INC_DAT = '1' THEN
+			ELSIF INC_DAT = '1' THEN
 				QDAT <= QDAT + 1;
-				ELSIF CL_DAT = '1' THEN
+			ELSIF CL_DAT = '1' THEN
 				QDAT <= "000";
 			END IF;
 		END IF;
@@ -244,17 +249,17 @@ BEGIN
 	END PROCESS;
 
 	LCD_DATA <= x"0000" WHEN CL_LCD_DATA = '1' ELSE
-	QDAT_MUX_OUT;
+		QDAT_MUX_OUT;
 
 	-- RS "biestable"
 	PROCESS (CLK, RESET_L)
 	BEGIN
 		IF RESET_L = '1' THEN
 			LCD_RS <= '0';
-			ELSIF CLK'event AND CLK = '1' THEN
+		ELSIF CLK'event AND CLK = '1' THEN
 			IF RSDAT = '1' THEN
 				LCD_RS <= '1';
-				ELSIF RSCOM = '1' THEN
+			ELSIF RSCOM = '1' THEN
 				LCD_RS <= '0';
 			END IF;
 		END IF;
