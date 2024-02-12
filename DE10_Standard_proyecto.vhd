@@ -296,7 +296,6 @@ BEGIN
         LT24_WR_N_Int  => wr_n,
         LT24_RD_N_Int  => '1',
         LT24_D_Int     => STD_LOGIC_VECTOR(d)
-
     );
 
     LEDR    <= done_uart & '0' & STD_LOGIC_VECTOR(bits_leds);
