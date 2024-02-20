@@ -88,6 +88,38 @@
 					"strict" : false
 				},
 				{
+					"name" : "LT24_D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[10]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[11]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[12]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[13]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[14]",
+					"strict" : false
+				},
+				{
+					"name" : "LT24_D[15]",
+					"strict" : false
+				},
+				{
 					"name" : "CLOCK_50",
 					"strict" : false
 				},

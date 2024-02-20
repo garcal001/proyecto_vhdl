@@ -84,7 +84,6 @@ BEGIN
 			WHEN e9 =>
 				ES <= e10;
 			WHEN e10 =>
-				-- ES <= e1;
 				IF (TC_OFF = '0') THEN
 					ES <= e5;
 				ELSE
@@ -107,16 +106,16 @@ BEGIN
 	END PROCESS;
 	-- Señales de control
 
-	LD_POS <= '0' WHEN (EP = e0 OR EP = e1 OR EP = e2 OR EP = e3) ELSE
+	LD_POS <= '0' WHEN (EP = e0 OR EP = e1 OR EP = e2 OR EP = e3 OR EP = e4) ELSE
 		'1';
 
 	RESET_BOLA <= '1' WHEN (EP = e0) ELSE
 		'0';
-	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e4) ELSE
+	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e5) ELSE
 		'0';
-	OP_DRAWCOLOUR <= '1' WHEN (EP = e3 OR EP = e6) ELSE
+	OP_DRAWCOLOUR <= '1' WHEN (EP = e3 OR EP = e7) ELSE
 		'0';
-	DEC_OFF <= '1' WHEN (EP = e8 AND TC_OFF = '0') ELSE
+	DEC_OFF <= '1' WHEN (EP = e9 AND TC_OFF = '0') ELSE
 		'0';
 	-- DEC_OFF <= '1' WHEN (EP = e8) ELSE
 	-- 	'0';

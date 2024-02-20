@@ -94,7 +94,7 @@ BEGIN
 
         REG_XCOL      => REG_XCOL,
         REG_YROW      => REG_YROW,
-        RGB           => RGB,
+        -- RGB           => RGB,
         -- NUM_PIX       => NUM_PIX,
         LD_POS        => LD_POS2
     );
@@ -102,9 +102,6 @@ BEGIN
     -- XCOL      <= X"64";
     -- YROW_DATA <= "0" & x"64";
     -- YROW      <= "0" & X"64";
-    NUM_PIX <= "0" & X"0064" WHEN LD_POS2 = '1' ELSE
-        "0" & X"0000";
-
     -- Contador YROW_OFF_DATA
     PROCESS (clk, RESET)
     BEGIN
@@ -133,6 +130,8 @@ BEGIN
         "0" & x"00";
     RGB <= X"FFFF" WHEN LD_POS2 = '1' ELSE
         X"0000";
+    NUM_PIX <= "0" & X"0064" WHEN LD_POS2 = '1' ELSE
+        "0" & X"0000";
 
     -- -- TC_OFF <= '1' WHEN YROW_OFF_DATA = x"00" ELSE
     --     '0';
