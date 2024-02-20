@@ -14,6 +14,8 @@ ENTITY GENERAL_UC IS
 		clk           : IN STD_LOGIC;
 		RESET         : IN STD_LOGIC;
 		INIT_DONE     : IN STD_LOGIC;
+		UART_IN       : IN unsigned(7 DOWNTO 0);
+		UART_DONE     : IN STD_LOGIC;
 
 		-- Salidas
 		RESET_BOLA    : OUT STD_LOGIC;
@@ -29,7 +31,7 @@ ENTITY GENERAL_UC IS
 	);
 END GENERAL_UC;
 ARCHITECTURE def_GENERAL_UC OF GENERAL_UC IS
-	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6, e7, e8, e9);
+	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6);
 	SIGNAL EP, ES : estado;
 
 BEGIN
@@ -39,53 +41,40 @@ BEGIN
 	BEGIN
 		CASE EP IS
 			WHEN e0 =>
-				IF (INIT_DONE = '1') THEN
+				IF (DONE_CURSOR = '1') THEN
 					ES <= e1;
 				ELSE
 					ES <= e0;
 				END IF;
 			WHEN e1 =>
-				IF (DONE_CURSOR = '1') THEN
+				IF (DONE_COLOUR = '1') THEN
 					ES <= e2;
 				ELSE
 					ES <= e1;
 				END IF;
-
 			WHEN e2 =>
-				ES <= e3;
+				ES <= e0;
 			WHEN e3 =>
-				IF (DONE_COLOUR = '1') THEN
-					ES <= e4;
-				ELSE
+				IF (DONE_CURSOR = '1') THEN
 					ES <= e3;
+				ELSE
+					ES <= e4;
 				END IF;
 			WHEN e4 =>
-				ES <= e5;
-			WHEN e5 =>
-				IF (DONE_CURSOR = '1') THEN
-					ES <= e6;
-				ELSE
-					ES <= e5;
-				END IF;
-			WHEN e6 =>
-				ES <= e7;
-			WHEN e7 =>
 				IF (DONE_COLOUR = '1') THEN
-					ES <= e8;
-				ELSE
-					ES <= e7;
-				END IF;
-			WHEN e8 =>
-				IF (TC_OFF = '1') THEN
-					ES <= e9;
+					ES <= e5;
 				ELSE
 					ES <= e4;
 				END IF;
-
-			WHEN e9 =>
-				ES                <= e9;
-
-			WHEN OTHERS => ES <= e0;
+			WHEN e5 =>
+				ES <= e1;
+				-- IF (TC_OFF = '1') THEN
+				-- 	ES <= e5;
+				-- ELSE
+				-- 	ES <= e2;
+				-- END IF;
+			WHEN OTHERS =>
+				ES <= e1;
 		END CASE;
 	END PROCESS;
 
@@ -100,38 +89,18 @@ BEGIN
 	END PROCESS;
 	-- Señales de control
 
-	RESET_BOLA <= '1' WHEN (EP = e0) ELSE
+	-- RESET_BOLA <= '1' WHEN (EP = e0) ELSE
+	-- 	'0';
+	OP_SETCURSOR <= '1' WHEN (EP = e0) ELSE
 		'0';
-	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e4) ELSE
+	OP_DRAWCOLOUR <= '1' WHEN (EP = e1) ELSE
 		'0';
-	OP_DRAWCOLOUR <= '1' WHEN (EP = e2 OR EP = e6) ELSE
+	DEC_OFF <= '1' WHEN (EP = e2) ELSE
 		'0';
-	DEC_OFF <= '1' WHEN (EP = e8) ELSE
-		'0';
-	LD_POS <= '1' WHEN (EP = e4) ELSE
-		'0';
-
-	-- RGB <= X"FFFF" WHEN (EP = e6) ELSE
-	-- 	X"0000";
-	WITH EP SELECT RGB <=
-		"1111100000000000" WHEN e6,
-		"1111100000000000" WHEN e7,
-		"0000000000011111" WHEN OTHERS;
-
-	WITH EP SELECT NUM_PIX <=
-		"10010110000000000" WHEN e2,
-		"10010110000000000" WHEN e3,
-		"10010110000000000" WHEN e6,
-		"10010110000000000" WHEN e7,
-		"10010110000000000" WHEN OTHERS;
-
-	WITH EP SELECT REG_XCOL <=
-		x"64" WHEN e4,
-		x"00" WHEN OTHERS;
-
-	WITH EP SELECT REG_YROW <=
-		"0" & x"64" WHEN e4,
-		"0" & x"00" WHEN OTHERS;
+	-- DEC_OFF <= '1' WHEN (EP = e8) ELSE
+	-- 	'0';
+	-- LD_POS <= '1' WHEN (EP = e4 OR EP = e6 OR EP = e2 OR EP = E0) ELSE
+	-- 	'0';
 
 	-- REG_XCOL <= X"64" WHEN (EP = e3 OR EP = e4 OR EP = e5) ELSE
 	-- 	x"00";

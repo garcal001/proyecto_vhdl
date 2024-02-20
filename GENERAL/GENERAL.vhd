@@ -32,6 +32,8 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
             DONE_CURSOR   : IN STD_LOGIC;
             DONE_COLOUR   : IN STD_LOGIC;
             TC_OFF        : IN STD_LOGIC;
+            UART_IN       : IN unsigned(7 DOWNTO 0);
+            UART_DONE     : IN STD_LOGIC;
 
             clk           : IN STD_LOGIC;
             RESET         : IN STD_LOGIC;
@@ -55,7 +57,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
     SIGNAL XCOL_DATA     : unsigned(7 DOWNTO 0) := x"64";       -- 100
     SIGNAL YROW_DATA     : unsigned(8 DOWNTO 0) := "0" & x"64"; -- 100
-    SIGNAL YROW_OFF_DATA : unsigned(2 DOWNTO 0) := "000";
+    SIGNAL YROW_OFF_DATA : unsigned(7 DOWNTO 0) := x"10";
 
     SIGNAL TC_OFF        : STD_LOGIC            := '0'; -- Cambiado por warning falta comprobar
 
@@ -80,6 +82,8 @@ BEGIN
         clk           => clk,
         RESET         => RESET,
         INIT_DONE     => INIT_DONE,
+        UART_DONE     => UART_DONE,
+        UART_IN       => UART_IN,
 
         -- Salidas
         RESET_BOLA    => RESET_BOLA,
@@ -91,25 +95,28 @@ BEGIN
         REG_XCOL      => REG_XCOL,
         REG_YROW      => REG_YROW,
         RGB           => RGB,
-        NUM_PIX       => NUM_PIX,
+        -- NUM_PIX       => NUM_PIX,
         LD_POS        => LD_POS
     );
 
-    XCOL <= XCOL_DATA;
-    YROW <= YROW_DATA + YROW_OFF_DATA;
+    XCOL      <= X"64";
+    YROW_DATA <= "0" & x"64";
+    -- YROW      <= YROW_DATA + YROW_OFF_DATA;
+    NUM_PIX   <= "0" & X"0010";
 
     -- Contador YROW_OFF_DATA
     PROCESS (clk, RESET)
     BEGIN
         IF RESET = '1' THEN
-            YROW_OFF_DATA <= "101";
+            YROW_OFF_DATA <= X"10";
 
         ELSIF clk'event AND clk = '1' THEN
-            IF RESET_BOLA = '1' THEN
-                YROW_OFF_DATA <= "101";
-            END IF;
+            -- IF RESET_BOLA = '1' THEN
+            --     YROW_OFF_DATA <= x"10";
+            -- END IF;
             IF DEC_OFF = '1' AND YROW_OFF_DATA > 0 THEN
                 YROW_OFF_DATA <= YROW_OFF_DATA - 1;
+                YROW          <= YROW_DATA + YROW_OFF_DATA;
             END IF;
         END IF;
     END PROCESS;
@@ -117,28 +124,28 @@ BEGIN
     TC_OFF <= '1' WHEN YROW_OFF_DATA = "0" ELSE
         '0';
 
-    -- Registro XCOL
-    PROCESS (CLK, RESET)
-    BEGIN
-        IF RESET = '1' THEN
-            XCOL_DATA <= x"00";
-        ELSIF CLK'event AND CLK = '1' THEN
-            IF LD_POS = '1' THEN
-                XCOL_DATA <= REG_XCOL;
-            END IF;
-        END IF;
-    END PROCESS;
+    -- -- Registro XCOL
+    -- PROCESS (CLK, RESET)
+    -- BEGIN
+    --     IF RESET = '1' THEN
+    --         XCOL_DATA <= x"00";
+    --     ELSIF CLK'event AND CLK = '1' THEN
+    --         IF LD_POS = '1' THEN
+    --             XCOL_DATA <= REG_XCOL;
+    --         END IF;
+    --     END IF;
+    -- END PROCESS;
 
-    -- Registro YROW
-    PROCESS (CLK, RESET)
-    BEGIN
-        IF RESET = '1' THEN
-            YROW_DATA <= "0" & x"00";
-        ELSIF CLK'event AND CLK = '1' THEN
-            IF LD_POS = '1' THEN
-                YROW_DATA <= REG_YROW;
-            END IF;
-        END IF;
-    END PROCESS;
+    -- -- Registro YROW
+    -- PROCESS (CLK, RESET)
+    -- BEGIN
+    --     IF RESET = '1' THEN
+    --         YROW_DATA <= "0" & x"00";
+    --     ELSIF CLK'event AND CLK = '1' THEN
+    --         IF LD_POS = '1' THEN
+    --             YROW_DATA <= REG_YROW;
+    --         END IF;
+    --     END IF;
+    -- END PROCESS;
 
 END GENERAL_ARCH;
