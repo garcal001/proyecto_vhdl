@@ -1,17 +1,17 @@
-Analysis & Synthesis Status : Successful - Tue Feb 20 11:18:42 2024
+Analysis & Synthesis Status : Successful - Tue Feb 20 11:18:43 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : DE10_Standard_proyecto
 Top-level Entity Name : DE10_Standard_proyecto
 Family : Cyclone V
-Logic utilization (in ALMs) : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total block memory bits : N/A until Partition Merge
-Total DSP Blocks : N/A until Partition Merge
-Total HSSI RX PCSs : N/A until Partition Merge
-Total HSSI PMA RX Deserializers : N/A until Partition Merge
-Total HSSI TX PCSs : N/A until Partition Merge
-Total HSSI PMA TX Serializers : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-Total DLLs : N/A until Partition Merge
+Logic utilization (in ALMs) : N/A
+Total registers : 941
+Total pins : 35
+Total virtual pins : 0
+Total block memory bits : 557,056
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

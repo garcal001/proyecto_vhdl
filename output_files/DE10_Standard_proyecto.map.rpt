@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_Standard_proyecto
-Tue Feb 20 11:14:21 2024
+Tue Feb 20 11:18:43 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -65,13 +65,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Feb 20 11:14:21 2024          ;
+; Analysis & Synthesis Status     ; Successful - Tue Feb 20 11:18:43 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DE10_Standard_proyecto                         ;
 ; Top-level Entity Name           ; DE10_Standard_proyecto                         ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 940                                            ;
+; Total registers                 ; 941                                            ;
 ; Total pins                      ; 35                                             ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 557,056                                        ;
@@ -186,7 +186,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -274,14 +275,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Estimate of Logic utilization (ALMs needed) ; 554            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 684            ;
+; Combinational ALUT usage for logic          ; 685            ;
 ;     -- 7 input functions                    ; 4              ;
 ;     -- 6 input functions                    ; 124            ;
 ;     -- 5 input functions                    ; 117            ;
-;     -- 4 input functions                    ; 69             ;
+;     -- 4 input functions                    ; 70             ;
 ;     -- <=3 input functions                  ; 370            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 940            ;
+; Dedicated logic registers                   ; 941            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 35             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -290,8 +291,8 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 611            ;
-; Total fan-out                               ; 7930           ;
+; Maximum fan-out                             ; 612            ;
+; Total fan-out                               ; 7936           ;
 ; Average fan-out                             ; 4.48           ;
 +---------------------------------------------+----------------+
 
@@ -301,8 +302,8 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                                ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |DE10_Standard_proyecto                                                                                                                 ; 684 (2)             ; 940 (0)                   ; 557056            ; 0          ; 35   ; 0            ; |DE10_Standard_proyecto                                                                                                                                                                                                                                                                                                                                            ; DE10_Standard_proyecto            ; work         ;
-;    |GENERAL:GENERAL_MAP|                                                                                                                ; 24 (20)             ; 11 (8)                    ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP                                                                                                                                                                                                                                                                                                                        ; GENERAL                           ; work         ;
+; |DE10_Standard_proyecto                                                                                                                 ; 685 (2)             ; 941 (0)                   ; 557056            ; 0          ; 35   ; 0            ; |DE10_Standard_proyecto                                                                                                                                                                                                                                                                                                                                            ; DE10_Standard_proyecto            ; work         ;
+;    |GENERAL:GENERAL_MAP|                                                                                                                ; 25 (21)             ; 12 (9)                    ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP                                                                                                                                                                                                                                                                                                                        ; GENERAL                           ; work         ;
 ;       |GENERAL_UC:UC|                                                                                                                   ; 4 (4)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|GENERAL_UC:UC                                                                                                                                                                                                                                                                                                          ; GENERAL_UC                        ; work         ;
 ;    |LCD_ctrl:LCD_CTRL_MAP|                                                                                                              ; 40 (27)             ; 40 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_ctrl:LCD_CTRL_MAP                                                                                                                                                                                                                                                                                                                      ; LCD_ctrl                          ; work         ;
 ;       |LCD_ctrl_UC:UC|                                                                                                                  ; 13 (13)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_ctrl:LCD_CTRL_MAP|LCD_ctrl_UC:UC                                                                                                                                                                                                                                                                                                       ; LCD_ctrl_UC                       ; work         ;
@@ -562,7 +563,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 940   ;
+; Total registers                              ; 941   ;
 ; Number of registers using Synchronous Clear  ; 204   ;
 ; Number of registers using Synchronous Load   ; 192   ;
 ; Number of registers using Asynchronous Clear ; 472   ;
@@ -786,33 +787,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 219                         ;
+; arriav_ff             ; 220                         ;
 ;     CLR               ; 83                          ;
 ;     CLR SCLR          ; 65                          ;
 ;     CLR SLD           ; 1                           ;
 ;     ENA               ; 8                           ;
 ;     ENA CLR           ; 38                          ;
 ;     ENA CLR SLD       ; 17                          ;
-;     plain             ; 7                           ;
-; arriav_lcell_comb     ; 293                         ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 294                         ;
 ;     arith             ; 126                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 119                         ;
 ;         2 data inputs ; 6                           ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 164                         ;
+;     normal            ; 165                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 14                          ;
 ;         2 data inputs ; 18                          ;
 ;         3 data inputs ; 27                          ;
-;         4 data inputs ; 31                          ;
+;         4 data inputs ; 32                          ;
 ;         5 data inputs ; 29                          ;
 ;         6 data inputs ; 43                          ;
 ; boundary_port         ; 51                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.30                        ;
-; Average LUT depth     ; 2.35                        ;
+; Average LUT depth     ; 2.37                        ;
 +-----------------------+-----------------------------+
 
 
@@ -906,7 +907,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Feb 20 11:14:09 2024
+    Info: Processing started: Tue Feb 20 11:18:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 0 entities, in source file LT24setup/Init128rom_pkg.vhd
@@ -991,7 +992,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_99c File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/db/cmpr_99c.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.02.20.11:14:17 Progress: Loading sld24255213/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.02.20.11:18:39 Progress: Loading sld24255213/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -1041,15 +1042,15 @@ Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 65 of its 67 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 2 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1332 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1334 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 1224 logic cells
+    Info (21061): Implemented 1226 logic cells
     Info (21064): Implemented 68 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Tue Feb 20 11:14:21 2024
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 546 megabytes
+    Info: Processing ended: Tue Feb 20 11:18:43 2024
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:25
 
 
