@@ -173,27 +173,17 @@ ARCHITECTURE rtl OF DE10_Standard_proyecto IS
         );
     END COMPONENT;
 
-    COMPONENT LCD_ctrl
+    COMPONENT LCD_Control
         PORT (
-            -- Entradas
-            LT24_Init_Done : IN STD_LOGIC;
-            OP_SETCURSOR   : IN STD_LOGIC;
-            XCOL           : IN unsigned (7 DOWNTO 0);
-            YROW           : IN unsigned (8 DOWNTO 0);
-            OP_DRAWCOLOUR  : IN STD_LOGIC;
-            RGB            : IN unsigned (15 DOWNTO 0);
-            NUMPIX         : IN unsigned (16 DOWNTO 0);
-
-            CLK            : IN STD_LOGIC;
-            RESET_L        : IN STD_LOGIC;
-
-            -- Salidas
-            DONE_CURSOR    : OUT STD_LOGIC;
-            DONE_COLOUR    : OUT STD_LOGIC;
-            LCD_CS_N       : OUT STD_LOGIC;
-            LCD_WR_N       : OUT STD_LOGIC;
-            LCD_RS         : OUT STD_LOGIC;
-            LCD_DATA       : OUT unsigned (15 DOWNTO 0)
+            -- lista de entradas y salidas del modulo: reset, clk etc
+            clk, reset                                           : IN STD_LOGIC;
+            LCD_Init_Done, OP_SETCURSOR, OP_DRAWCOLOR            : IN STD_LOGIC;
+            XCOL                                                 : IN unsigned (7 DOWNTO 0);
+            YROW                                                 : IN unsigned (8 DOWNTO 0);
+            RGB                                                  : IN unsigned (15 DOWNTO 0);
+            NUM_PIX                                              : IN unsigned (16 DOWNTO 0);
+            DONE_CURSOR, DONE_COLOUR, LCD_CS_N, LCD_WR_N, LCD_RS : OUT STD_LOGIC;
+            LCD_DATA                                             : OUT unsigned (15 DOWNTO 0)
         );
     END COMPONENT;
 
@@ -255,26 +245,26 @@ BEGIN
         NUM_PIX       => NUM_PIX
     );
 
-    LCD_CTRL_MAP : LCD_CTRL PORT MAP(
+    LCD_CTRL_MAP : LCD_Control PORT MAP(
         -- Entradas
-        LT24_Init_Done => init_done,
-        OP_SETCURSOR   => OP_SETCURSOR,
-        XCOL           => XCOL,
-        YROW           => YROW,
-        OP_DRAWCOLOUR  => OP_DRAWCOLOUR,
-        RGB            => rgb,
-        NUMPIX         => NUM_PIX,
+        LCD_Init_Done => init_done,
+        OP_SETCURSOR  => OP_SETCURSOR,
+        XCOL          => XCOL,
+        YROW          => YROW,
+        OP_DRAWCOLOR  => OP_DRAWCOLOUR,
+        RGB           => rgb,
+        NUM_PIX       => NUM_PIX,
 
-        CLK            => clk,
-        RESET_L        => reset,
+        CLK           => clk,
+        RESET         => reset,
 
         -- Salidas
-        DONE_CURSOR    => DONE_CURSOR,
-        DONE_COLOUR    => DONE_COLOUR,
-        LCD_CS_N       => cs_n,
-        LCD_WR_N       => wr_n,
-        LCD_RS         => rs,
-        LCD_DATA       => d
+        DONE_CURSOR   => DONE_CURSOR,
+        DONE_COLOUR   => DONE_COLOUR,
+        LCD_CS_N      => cs_n,
+        LCD_WR_N      => wr_n,
+        LCD_RS        => rs,
+        LCD_DATA      => d
     );
 
     LCD_SETUP_MAP : LT24Setup PORT MAP(

@@ -57,7 +57,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
     SIGNAL XCOL_DATA     : unsigned(7 DOWNTO 0) := x"64";       -- 100
     SIGNAL YROW_DATA     : unsigned(8 DOWNTO 0) := "0" & x"64"; -- 100
-    SIGNAL YROW_OFF_DATA : unsigned(7 DOWNTO 0) := x"10";
+    SIGNAL YROW_OFF_DATA : unsigned(7 DOWNTO 0) := x"20";
 
     SIGNAL TC_OFF        : STD_LOGIC            := '0'; -- Cambiado por warning falta comprobar
 
@@ -70,7 +70,7 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
     SIGNAL REG_XCOL      : unsigned(7 DOWNTO 0);
     SIGNAL REG_YROW      : unsigned(8 DOWNTO 0);
-    SIGNAL LD_POS        : STD_LOGIC;
+    SIGNAL LD_POS2       : STD_LOGIC;
 
 BEGIN
     UC : GENERAL_UC PORT MAP(
@@ -96,33 +96,46 @@ BEGIN
         REG_YROW      => REG_YROW,
         RGB           => RGB,
         -- NUM_PIX       => NUM_PIX,
-        LD_POS        => LD_POS
+        LD_POS        => LD_POS2
     );
 
-    XCOL      <= X"64";
-    YROW_DATA <= "0" & x"64";
-    -- YROW      <= YROW_DATA + YROW_OFF_DATA;
-    NUM_PIX   <= "0" & X"0010";
+    -- XCOL      <= X"64";
+    -- YROW_DATA <= "0" & x"64";
+    -- YROW      <= "0" & X"64";
+    NUM_PIX <= "0" & X"0064" WHEN LD_POS2 = '1' ELSE
+        "0" & X"0000";
 
     -- Contador YROW_OFF_DATA
     PROCESS (clk, RESET)
     BEGIN
         IF RESET = '1' THEN
-            YROW_OFF_DATA <= X"10";
+            YROW_OFF_DATA <= X"20";
 
         ELSIF clk'event AND clk = '1' THEN
-            -- IF RESET_BOLA = '1' THEN
-            --     YROW_OFF_DATA <= x"10";
-            -- END IF;
-            IF DEC_OFF = '1' AND YROW_OFF_DATA > 0 THEN
-                YROW_OFF_DATA <= YROW_OFF_DATA - 1;
-                YROW          <= YROW_DATA + YROW_OFF_DATA;
+            IF RESET_BOLA = '1' THEN
+                YROW_OFF_DATA <= x"74";
             END IF;
+            IF YROW_OFF_DATA < X"10" THEN
+                TC_OFF <= '1';
+            ELSE
+                TC_OFF <= '0';
+                IF DEC_OFF = '1' THEN
+                    YROW_OFF_DATA <= YROW_OFF_DATA - 1;
+                END IF;
+            END IF;
+
         END IF;
     END PROCESS;
+    -- 240 x 320
+    XCOL <= x"46" WHEN LD_POS2 = '1' ELSE
+        x"00";
+    YROW <= ("0" & YROW_OFF_DATA) + x"6e" WHEN LD_POS2 = '1' ELSE
+        "0" & x"00";
+    RGB <= X"FFFF" WHEN LD_POS2 = '1' ELSE
+        X"0000";
 
-    TC_OFF <= '1' WHEN YROW_OFF_DATA = "0" ELSE
-        '0';
+    -- -- TC_OFF <= '1' WHEN YROW_OFF_DATA = x"00" ELSE
+    --     '0';
 
     -- -- Registro XCOL
     -- PROCESS (CLK, RESET)

@@ -31,7 +31,7 @@ ENTITY GENERAL_UC IS
 	);
 END GENERAL_UC;
 ARCHITECTURE def_GENERAL_UC OF GENERAL_UC IS
-	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6);
+	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10);
 	SIGNAL EP, ES : estado;
 
 BEGIN
@@ -41,40 +41,58 @@ BEGIN
 	BEGIN
 		CASE EP IS
 			WHEN e0 =>
-				IF (DONE_CURSOR = '1') THEN
+				IF (INIT_DONE = '1') THEN
 					ES <= e1;
 				ELSE
 					ES <= e0;
 				END IF;
 			WHEN e1 =>
-				IF (DONE_COLOUR = '1') THEN
-					ES <= e2;
-				ELSE
-					ES <= e1;
-				END IF;
+				ES <= e2;
+
 			WHEN e2 =>
-				ES <= e0;
-			WHEN e3 =>
 				IF (DONE_CURSOR = '1') THEN
 					ES <= e3;
 				ELSE
-					ES <= e4;
+					ES <= e2;
 				END IF;
+			WHEN e3 =>
+				ES <= e4;
 			WHEN e4 =>
 				IF (DONE_COLOUR = '1') THEN
 					ES <= e5;
 				ELSE
 					ES <= e4;
 				END IF;
+				--------------------------------------------------------------------------------
+
 			WHEN e5 =>
-				ES <= e1;
-				-- IF (TC_OFF = '1') THEN
-				-- 	ES <= e5;
-				-- ELSE
-				-- 	ES <= e2;
-				-- END IF;
+				ES <= e6;
+			WHEN e6 =>
+				IF (DONE_CURSOR = '1') THEN
+					ES <= e7;
+				ELSE
+					ES <= e6;
+				END IF;
+			WHEN e7 =>
+				ES <= e8;
+			WHEN e8 =>
+				IF (DONE_COLOUR = '1') THEN
+					ES <= e9;
+				ELSE
+					ES <= e8;
+				END IF;
+			WHEN e9 =>
+				ES <= e10;
+			WHEN e10 =>
+				-- ES <= e1;
+				IF (TC_OFF = '0') THEN
+					ES <= e5;
+				ELSE
+					ES <= e0;
+				END IF;
+
 			WHEN OTHERS =>
-				ES <= e1;
+				ES <= e0;
 		END CASE;
 	END PROCESS;
 
@@ -89,13 +107,16 @@ BEGIN
 	END PROCESS;
 	-- Señales de control
 
-	-- RESET_BOLA <= '1' WHEN (EP = e0) ELSE
-	-- 	'0';
-	OP_SETCURSOR <= '1' WHEN (EP = e0) ELSE
+	LD_POS <= '0' WHEN (EP = e0 OR EP = e1 OR EP = e2 OR EP = e3) ELSE
+		'1';
+
+	RESET_BOLA <= '1' WHEN (EP = e0) ELSE
 		'0';
-	OP_DRAWCOLOUR <= '1' WHEN (EP = e1) ELSE
+	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e4) ELSE
 		'0';
-	DEC_OFF <= '1' WHEN (EP = e2) ELSE
+	OP_DRAWCOLOUR <= '1' WHEN (EP = e3 OR EP = e6) ELSE
+		'0';
+	DEC_OFF <= '1' WHEN (EP = e8 AND TC_OFF = '0') ELSE
 		'0';
 	-- DEC_OFF <= '1' WHEN (EP = e8) ELSE
 	-- 	'0';
