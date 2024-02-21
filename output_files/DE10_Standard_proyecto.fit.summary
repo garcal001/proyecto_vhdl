@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Feb 21 12:22:10 2024
+Fitter Status : Successful - Wed Feb 21 17:58:29 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : DE10_Standard_proyecto
 Top-level Entity Name : DE10_Standard_proyecto
@@ -6,7 +6,7 @@ Family : Cyclone V
 Device : 5CSXFC6D6F31C6
 Timing Models : Final
 Logic utilization (in ALMs) : 305 / 41,910 ( < 1 % )
-Total registers : 324
+Total registers : 317
 Total pins : 35 / 499 ( 7 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )

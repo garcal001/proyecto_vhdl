@@ -1,0 +1,133 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/18.1
+Egeneral
+Z0 w1707472688
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dC:/Users/ehu/VHDL/proyecto_vhdl/GENERAL
+Z5 8C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd
+Z6 FC:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd
+l0
+L5
+V^ICH?QCYS:i?PeGmljfB?1
+!s100 _3TCnMdb33malX02zb3hN3
+Z7 OV;C;10.5b;63
+32
+Z8 !s110 1707476464
+!i10b 1
+Z9 !s108 1707476464.000000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd|
+Z11 !s107 C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Ageneral_arch
+R1
+R2
+R3
+DEx4 work 7 general 0 22 ^ICH?QCYS:i?PeGmljfB?1
+l73
+L28
+V_Sl3=KWG^b1hCj54^Ha?00
+!s100 b5CKCW5GB7SDUjfe1_P]^3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Egeneral_tb
+Z14 w1707475942
+R3
+R2
+R1
+R4
+Z15 8C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_tb.vhd
+Z16 FC:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_tb.vhd
+l0
+L5
+VnLkPd?G`<Qi68bNg=DmnF2
+!s100 WfTVADI:Xj7mgMU81nXnR2
+R7
+32
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_tb.vhd|
+Z18 !s107 C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_tb.vhd|
+!i113 1
+R12
+R13
+Ageneral_tb_arch
+R3
+R2
+R1
+DEx4 work 10 general_tb 0 22 nLkPd?G`<Qi68bNg=DmnF2
+l39
+L9
+VVmQ7PaIzBdi8mTPFGX76b3
+!s100 aPQdo=<jWO>eiCo6ebI`A0
+R7
+32
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Egeneral_uc
+Z19 w1707476459
+R1
+R2
+R3
+R4
+Z20 8C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd
+Z21 FC:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd
+l0
+L7
+VG0JCRjo[:FeUAY9BBXhbC3
+!s100 HD045e]U=n?8;TDYNOaL00
+R7
+32
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd|
+Z23 !s107 C:/Users/ehu/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd|
+!i113 1
+R12
+R13
+Adef_general_uc
+R1
+R2
+R3
+Z24 DEx4 work 10 general_uc 0 22 G0JCRjo[:FeUAY9BBXhbC3
+l35
+L31
+VkhjBj:RMfSX^0Y]Im:hWQ1
+!s100 H1o3@L097:@RUJ7=9`0gG2
+R7
+32
+R8
+!i10b 1
+R9
+R22
+R23
+!i113 1
+R12
+R13

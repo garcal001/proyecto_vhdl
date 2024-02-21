@@ -1,5 +1,5 @@
 Fitter report for DE10_Standard_proyecto
-Wed Feb 21 12:22:10 2024
+Wed Feb 21 17:58:29 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +---------------------------------+------------------------------------------------+
-; Fitter Status                   ; Successful - Wed Feb 21 12:22:10 2024          ;
+; Fitter Status                   ; Successful - Wed Feb 21 17:58:29 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DE10_Standard_proyecto                         ;
 ; Top-level Entity Name           ; DE10_Standard_proyecto                         ;
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CSXFC6D6F31C6                                 ;
 ; Timing Models                   ; Final                                          ;
 ; Logic utilization (in ALMs)     ; 305 / 41,910 ( < 1 % )                         ;
-; Total registers                 ; 324                                            ;
+; Total registers                 ; 317                                            ;
 ; Total pins                      ; 35 / 499 ( 7 % )                               ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                          ;
@@ -159,7 +159,7 @@ https://fpgasoftware.intel.com/eula.
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   1.6%      ;
-;     Processor 3            ;   1.6%      ;
+;     Processor 3            ;   1.5%      ;
 ;     Processor 4            ;   1.5%      ;
 +----------------------------+-------------+
 
@@ -171,32 +171,25 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------------------------+------------------+-----------------------+
 ; CLOCK_50~inputCLKENA0                                                        ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                                        ;                  ;                       ;
 ; KEY[0]~inputCLKENA0                                                          ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                                        ;                  ;                       ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e0                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e0~DUPLICATE                                      ;                  ;                       ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e2                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e2~DUPLICATE                                      ;                  ;                       ;
 ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3~DUPLICATE                                      ;                  ;                       ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5~DUPLICATE                                      ;                  ;                       ;
-; GENERAL:GENERAL_MAP|YROW_OFF_DATA[0]                                         ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|YROW_OFF_DATA[0]~DUPLICATE                                         ;                  ;                       ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e7                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e7~DUPLICATE                                      ;                  ;                       ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e9                                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e9~DUPLICATE                                      ;                  ;                       ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e6                          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e6~DUPLICATE                          ;                  ;                       ;
 ; LCD_Control:LCD_CTRL_MAP|QDAT[0]                                             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|QDAT[0]~DUPLICATE                                             ;                  ;                       ;
 ; LCD_Control:LCD_CTRL_MAP|QDAT[1]                                             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|QDAT[1]~DUPLICATE                                             ;                  ;                       ;
 ; LCD_Control:LCD_CTRL_MAP|QDAT[2]                                             ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|QDAT[2]~DUPLICATE                                             ;                  ;                       ;
-; LCD_Control:LCD_CTRL_MAP|auxContPix[2]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|auxContPix[2]~DUPLICATE                                       ;                  ;                       ;
-; LCD_Control:LCD_CTRL_MAP|auxContPix[9]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|auxContPix[9]~DUPLICATE                                       ;                  ;                       ;
-; LCD_Control:LCD_CTRL_MAP|epres.e5                                            ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|epres.e5~DUPLICATE                                            ;                  ;                       ;
-; LCD_Control:LCD_CTRL_MAP|epres.e10                                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|epres.e10~DUPLICATE                                           ;                  ;                       ;
-; LCD_Control:LCD_CTRL_MAP|epres.e11                                           ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|epres.e11~DUPLICATE                                           ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA          ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA~DUPLICATE          ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[6] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[6]~DUPLICATE ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[2]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[2]~DUPLICATE                 ;                  ;                       ;
+; LCD_Control:LCD_CTRL_MAP|auxContPix[4]                                       ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LCD_Control:LCD_CTRL_MAP|auxContPix[4]~DUPLICATE                                       ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[0]~DUPLICATE ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[0]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[0]~DUPLICATE                 ;                  ;                       ;
 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[3]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[3]~DUPLICATE                 ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[6]                 ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[6]~DUPLICATE                 ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[2]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[2]~DUPLICATE              ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[3]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[3]~DUPLICATE              ;                  ;                       ;
 ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[4]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[4]~DUPLICATE              ;                  ;                       ;
 ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[5]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[5]~DUPLICATE              ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[6]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[6]~DUPLICATE              ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[3]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[3]~DUPLICATE              ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec~DUPLICATE                      ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_init                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_init~DUPLICATE                    ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0~DUPLICATE                   ;                  ;                       ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec~DUPLICATE                    ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[7]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[7]~DUPLICATE              ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[8]              ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[8]~DUPLICATE              ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[5]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[5]~DUPLICATE               ;                  ;                       ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait2                   ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait2~DUPLICATE                   ;                  ;                       ;
 +------------------------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+----------------------------------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -248,12 +241,12 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 305 / 41,910       ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 305                ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 328 / 41,910       ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 112                ;       ;
-;         [b] ALMs used for LUT logic                         ; 179                ;       ;
-;         [c] ALMs used for registers                         ; 37                 ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 330 / 41,910       ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 115                ;       ;
+;         [b] ALMs used for LUT logic                         ; 182                ;       ;
+;         [c] ALMs used for registers                         ; 33                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 23 / 41,910        ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 25 / 41,910        ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41,910         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -272,15 +265,15 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 ;     -- 5 input functions                                    ; 38                 ;       ;
 ;     -- 4 input functions                                    ; 92                 ;       ;
 ;     -- <=3 input functions                                  ; 376                ;       ;
-; Combinational ALUT usage for route-throughs                 ; 38                 ;       ;
+; Combinational ALUT usage for route-throughs                 ; 28                 ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 324                ;       ;
+; Dedicated logic registers                                   ; 317                ;       ;
 ;     -- By type:                                             ;                    ;       ;
 ;         -- Primary logic registers                          ; 296 / 83,820       ; < 1 % ;
-;         -- Secondary logic registers                        ; 28 / 83,820        ; < 1 % ;
+;         -- Secondary logic registers                        ; 21 / 83,820        ; < 1 % ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 298                ;       ;
-;         -- Routing optimization registers                   ; 26                 ;       ;
+;         -- Routing optimization registers                   ; 19                 ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 35 / 499           ; 7 %   ;
@@ -342,11 +335,11 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.1% / 0.2% / 0.1% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 4.1% / 4.4% / 3.4% ;       ;
-; Maximum fan-out                                             ; 324                ;       ;
+; Peak interconnect usage (total/H/V)                         ; 3.9% / 4.3% / 2.9% ;       ;
+; Maximum fan-out                                             ; 317                ;       ;
 ; Highest non-global fan-out                                  ; 41                 ;       ;
-; Total fan-out                                               ; 3022               ;       ;
-; Average fan-out                                             ; 3.07               ;       ;
+; Total fan-out                                               ; 2989               ;       ;
+; Average fan-out                                             ; 3.09               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -357,12 +350,12 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 305 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 305                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 328 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 112                   ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 179                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 37                    ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 330 / 41910 ( < 1 % ) ; 0 / 41910 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 115                   ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 182                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 33                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 23 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 25 / 41910 ( < 1 % )  ; 0 / 41910 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 41910 ( 0 % )     ; 0 / 41910 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -381,7 +374,7 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 ;     -- 5 input functions                                    ; 38                    ; 0                              ;
 ;     -- 4 input functions                                    ; 92                    ; 0                              ;
 ;     -- <=3 input functions                                  ; 376                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 38                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 28                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
@@ -389,10 +382,10 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
 ;         -- Primary logic registers                          ; 296 / 83820 ( < 1 % ) ; 0 / 83820 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 28 / 83820 ( < 1 % )  ; 0 / 83820 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 21 / 83820 ( < 1 % )  ; 0 / 83820 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
 ;         -- Design implementation registers                  ; 298                   ; 0                              ;
-;         -- Routing optimization registers                   ; 26                    ; 0                              ;
+;         -- Routing optimization registers                   ; 19                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -409,8 +402,8 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 3029                  ; 0                              ;
-;     -- Registered Connections                               ; 922                   ; 0                              ;
+;     -- Total Connections                                    ; 2996                  ; 0                              ;
+;     -- Registered Connections                               ; 921                   ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -442,8 +435,8 @@ The pin-out file can be found in /home/guillermo/Documentos/Estudios/VHDL/proyec
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 324                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
-; KEY[0]   ; AJ4   ; 3B       ; 22           ; 0            ; 34           ; 316                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50 ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 317                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; KEY[0]   ; AJ4   ; 3B       ; 22           ; 0            ; 34           ; 309                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; UART_RX  ; AH5   ; 3A       ; 14           ; 0            ; 51           ; 5                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
@@ -1461,20 +1454,21 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                         ; Entity Name            ; Library Name ;
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |DE10_Standard_proyecto                   ; 304.5 (0.5)          ; 327.0 (0.5)                      ; 22.5 (0.0)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 550 (1)             ; 324 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 35   ; 0            ; |DE10_Standard_proyecto                                                                                                                     ; DE10_Standard_proyecto ; work         ;
-;    |GENERAL:GENERAL_MAP|                  ; 117.4 (25.5)         ; 129.5 (36.8)                     ; 12.1 (11.3)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 240 (57)            ; 57 (42)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP                                                                                                 ; GENERAL                ; work         ;
-;       |GENERAL_UC:UC|                     ; 6.3 (6.3)            ; 6.7 (6.7)                        ; 0.4 (0.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 15 (15)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|GENERAL_UC:UC                                                                                   ; GENERAL_UC             ; work         ;
-;       |lpm_divide:Div0|                   ; 85.7 (0.0)           ; 86.0 (0.0)                       ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0                                                                                 ; lpm_divide             ; work         ;
-;          |lpm_divide_nbm:auto_generated|  ; 85.7 (0.0)           ; 86.0 (0.0)                       ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated                                                   ; lpm_divide_nbm         ; work         ;
-;             |sign_div_unsign_tlh:divider| ; 85.7 (0.0)           ; 86.0 (0.0)                       ; 0.3 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh    ; work         ;
-;                |alt_u_div_00f:divider|    ; 85.7 (85.7)          ; 86.0 (86.0)                      ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (171)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_00f:divider ; alt_u_div_00f          ; work         ;
-;    |LCD_Control:LCD_CTRL_MAP|             ; 45.8 (45.8)          ; 47.2 (47.2)                      ; 1.4 (1.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 66 (66)             ; 77 (77)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP                                                                                            ; LCD_Control            ; work         ;
-;    |LT24Setup:LCD_SETUP_MAP|              ; 108.1 (31.5)         ; 110.7 (31.5)                     ; 2.6 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 180 (44)            ; 149 (19)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP                                                                                             ; LT24Setup              ; work         ;
-;       |LT24InitLCD:DUT_InitLCD|           ; 19.6 (13.6)          ; 20.7 (13.7)                      ; 1.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 30 (24)             ; 36 (28)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD                                                                     ; LT24InitLCD            ; work         ;
-;          |romsinc:DUT_ROM|                ; 6.0 (6.0)            ; 7.0 (7.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM                                                     ; romsinc                ; work         ;
-;       |LT24InitReset:DUT_RESET|           ; 56.2 (56.2)          ; 58.4 (58.4)                      ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 106 (106)           ; 94 (94)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET                                                                     ; LT24InitReset          ; work         ;
-;    |UART:UART_MAP|                        ; 32.7 (29.0)          ; 39.2 (35.3)                      ; 6.5 (6.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 63 (55)             ; 41 (36)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP                                                                                                       ; UART                   ; work         ;
-;       |UART_UC:UC|                        ; 3.7 (3.7)            ; 3.8 (3.8)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC                                                                                            ; UART_UC                ; work         ;
+; |DE10_Standard_proyecto                   ; 304.5 (0.5)          ; 330.0 (0.5)                      ; 25.5 (0.0)                                        ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 550 (1)             ; 317 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 35   ; 0            ; |DE10_Standard_proyecto                                                                                                                     ; DE10_Standard_proyecto ; work         ;
+;    |GENERAL:GENERAL_MAP|                  ; 117.1 (25.5)         ; 128.4 (36.3)                     ; 11.3 (10.8)                                       ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 240 (57)            ; 57 (41)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP                                                                                                 ; GENERAL                ; work         ;
+;       |GENERAL_UC:UC|                     ; 5.9 (5.9)            ; 6.4 (6.4)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|GENERAL_UC:UC                                                                                   ; GENERAL_UC             ; work         ;
+;       |lpm_divide:Div0|                   ; 85.7 (0.0)           ; 85.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0                                                                                 ; lpm_divide             ; work         ;
+;          |lpm_divide_nbm:auto_generated|  ; 85.7 (0.0)           ; 85.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated                                                   ; lpm_divide_nbm         ; work         ;
+;             |sign_div_unsign_tlh:divider| ; 85.7 (0.0)           ; 85.7 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (0)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh    ; work         ;
+;                |alt_u_div_00f:divider|    ; 85.7 (85.7)          ; 85.7 (85.7)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 171 (171)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_00f:divider ; alt_u_div_00f          ; work         ;
+;    |LCD_Control:LCD_CTRL_MAP|             ; 47.2 (38.3)          ; 50.2 (40.4)                      ; 3.0 (2.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 66 (54)             ; 74 (58)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP                                                                                            ; LCD_Control            ; work         ;
+;       |LCD_Control_UC:UC|                 ; 8.8 (8.8)            ; 9.7 (9.7)                        ; 0.9 (0.9)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC                                                                          ; LCD_Control_UC         ; work         ;
+;    |LT24Setup:LCD_SETUP_MAP|              ; 107.6 (31.8)         ; 112.8 (31.8)                     ; 5.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 180 (44)            ; 145 (19)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP                                                                                             ; LT24Setup              ; work         ;
+;       |LT24InitLCD:DUT_InitLCD|           ; 19.8 (13.3)          ; 19.8 (13.3)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 30 (24)             ; 34 (26)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD                                                                     ; LT24InitLCD            ; work         ;
+;          |romsinc:DUT_ROM|                ; 6.3 (6.3)            ; 6.4 (6.4)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 8 (8)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM                                                     ; romsinc                ; work         ;
+;       |LT24InitReset:DUT_RESET|           ; 55.7 (55.7)          ; 61.2 (61.2)                      ; 5.4 (5.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 106 (106)           ; 92 (92)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET                                                                     ; LT24InitReset          ; work         ;
+;    |UART:UART_MAP|                        ; 32.2 (28.5)          ; 38.2 (34.7)                      ; 6.0 (6.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 63 (55)             ; 41 (36)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP                                                                                                       ; UART                   ; work         ;
+;       |UART_UC:UC|                        ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC                                                                                            ; UART_UC                ; work         ;
 +-------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1540,11 +1534,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - UART:UART_MAP|CNT[11]~5              ; 0                 ; 0       ;
 ;      - KEY[0]~inputCLKENA0                  ; 0                 ; 0       ;
 ; UART_RX                                     ;                   ;         ;
+;      - UART:UART_MAP|UART_BITS[7]           ; 0                 ; 0       ;
 ;      - UART:UART_MAP|UART_UC:UC|Selector2~0 ; 0                 ; 0       ;
 ;      - UART:UART_MAP|UART_UC:UC|RESET_8     ; 0                 ; 0       ;
 ;      - UART:UART_MAP|UART_UC:UC|Selector0~0 ; 0                 ; 0       ;
 ;      - UART:UART_MAP|UART_UC:UC|ES.e0~0     ; 0                 ; 0       ;
-;      - UART:UART_MAP|UART_BITS[7]~feeder    ; 0                 ; 0       ;
 +---------------------------------------------+-------------------+---------+
 
 
@@ -1553,30 +1547,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                    ; Location            ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                ; PIN_AF14            ; 324     ; Clock                      ; yes    ; Global Clock         ; GCLK5            ; --                        ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|LD_POS~0                              ; MLABCELL_X15_Y2_N54 ; 34      ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
-; GENERAL:GENERAL_MAP|RGB2[15]~1                                          ; MLABCELL_X21_Y2_N36 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; GENERAL:GENERAL_MAP|RGBFONDO[11]~0                                      ; MLABCELL_X21_Y2_N39 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; KEY[0]                                                                  ; PIN_AJ4             ; 307     ; Async. clear               ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50                                                                ; PIN_AF14            ; 317     ; Clock                      ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|LD_POS~0                              ; LABCELL_X17_Y3_N36  ; 34      ; Sync. clear, Sync. load    ; no     ; --                   ; --               ; --                        ;
+; GENERAL:GENERAL_MAP|RGB2[15]~1                                          ; LABCELL_X24_Y1_N0   ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; GENERAL:GENERAL_MAP|RGBFONDO[11]~0                                      ; LABCELL_X24_Y1_N39  ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; KEY[0]                                                                  ; PIN_AJ4             ; 300     ; Async. clear               ; yes    ; Global Clock         ; GCLK4            ; --                        ;
 ; KEY[0]                                                                  ; PIN_AJ4             ; 10      ; Clock enable, Latch enable ; no     ; --                   ; --               ; --                        ;
-; LCD_Control:LCD_CTRL_MAP|QDAT[2]~1                                      ; LABCELL_X12_Y4_N54  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LCD_Control:LCD_CTRL_MAP|auxContPix[8]~1                                ; MLABCELL_X15_Y3_N15 ; 18      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LCD_Control:LCD_CTRL_MAP|auxContPix[8]~2                                ; MLABCELL_X15_Y3_N12 ; 18      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LCD_Control:LCD_CTRL_MAP|epres.e1                                       ; FF_X15_Y2_N35       ; 23      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LCD_Control:LCD_CTRL_MAP|epres.e14                                      ; FF_X15_Y2_N2        ; 41      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|Selector3~0             ; LABCELL_X13_Y4_N24  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; FF_X9_Y2_N17        ; 22      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_Send_CMD_DATA ; FF_X13_Y4_N11       ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[15]~0      ; LABCELL_X11_Y2_N9   ; 36      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[0]~0       ; MLABCELL_X8_Y4_N18  ; 9       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[0]~0        ; LABCELL_X11_Y2_N6   ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[4]~0        ; LABCELL_X12_Y2_N42  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[4]~0         ; LABCELL_X9_Y2_N57   ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; LT24Setup:LCD_SETUP_MAP|LT24_D~18                                       ; LABCELL_X12_Y3_N36  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; UART:UART_MAP|CNT[15]~20                                                ; LABCELL_X17_Y2_N27  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; UART:UART_MAP|Equal0~3                                                  ; LABCELL_X19_Y2_N12  ; 26      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; UART:UART_MAP|UART_BITS[7]~0                                            ; LABCELL_X19_Y2_N33  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; UART:UART_MAP|bits[1]~1                                                 ; LABCELL_X17_Y2_N9   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e1                     ; FF_X17_Y3_N23       ; 23      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e14                    ; FF_X17_Y3_N14       ; 41      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; LCD_Control:LCD_CTRL_MAP|QDAT[2]~1                                      ; LABCELL_X12_Y2_N15  ; 6       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LCD_Control:LCD_CTRL_MAP|auxContPix[8]~1                                ; LABCELL_X9_Y3_N36   ; 17      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LCD_Control:LCD_CTRL_MAP|auxContPix[8]~2                                ; LABCELL_X9_Y3_N39   ; 17      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|Selector3~0             ; LABCELL_X19_Y2_N12  ; 2       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; FF_X13_Y2_N2        ; 22      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_Send_CMD_DATA ; FF_X19_Y2_N29       ; 11      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[15]~0      ; LABCELL_X22_Y3_N9   ; 37      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[0]~0       ; LABCELL_X22_Y4_N30  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[0]~0        ; LABCELL_X24_Y2_N24  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[4]~0        ; MLABCELL_X21_Y2_N30 ; 9       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[4]~0         ; LABCELL_X22_Y3_N3   ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; LT24Setup:LCD_SETUP_MAP|LT24_D~18                                       ; LABCELL_X16_Y2_N9   ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; UART:UART_MAP|CNT[15]~20                                                ; MLABCELL_X21_Y1_N0  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; UART:UART_MAP|Equal0~3                                                  ; LABCELL_X23_Y1_N54  ; 26      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; UART:UART_MAP|UART_BITS[7]~0                                            ; LABCELL_X24_Y1_N12  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; UART:UART_MAP|bits[1]~1                                                 ; MLABCELL_X21_Y1_N57 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +-------------------------------------------------------------------------+---------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1585,8 +1579,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_AF14 ; 324     ; Global Clock         ; GCLK5            ; --                        ;
-; KEY[0]   ; PIN_AJ4  ; 307     ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50 ; PIN_AF14 ; 317     ; Global Clock         ; GCLK5            ; --                        ;
+; KEY[0]   ; PIN_AJ4  ; 300     ; Global Clock         ; GCLK4            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1595,14 +1589,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-------------------------+
 ; Routing Resource Type                       ; Usage                   ;
 +---------------------------------------------+-------------------------+
-; Block interconnects                         ; 719 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 2 / 13,420 ( < 1 % )    ;
-; C2 interconnects                            ; 138 / 119,108 ( < 1 % ) ;
-; C4 interconnects                            ; 75 / 56,300 ( < 1 % )   ;
+; Block interconnects                         ; 722 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 1 / 13,420 ( < 1 % )    ;
+; C2 interconnects                            ; 150 / 119,108 ( < 1 % ) ;
+; C4 interconnects                            ; 63 / 56,300 ( < 1 % )   ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )          ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )          ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )          ;
-; Direct links                                ; 220 / 289,320 ( < 1 % ) ;
+; Direct links                                ; 186 / 289,320 ( < 1 % ) ;
 ; Global clocks                               ; 2 / 16 ( 13 % )         ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )           ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )           ;
@@ -1658,13 +1652,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )           ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )          ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )          ;
-; Local interconnects                         ; 267 / 84,580 ( < 1 % )  ;
+; Local interconnects                         ; 253 / 84,580 ( < 1 % )  ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )          ;
-; R14 interconnects                           ; 45 / 12,676 ( < 1 % )   ;
-; R14/C12 interconnect drivers                ; 44 / 20,720 ( < 1 % )   ;
-; R3 interconnects                            ; 267 / 130,992 ( < 1 % ) ;
-; R6 interconnects                            ; 222 / 266,960 ( < 1 % ) ;
-; Spine clocks                                ; 2 / 360 ( < 1 % )       ;
+; R14 interconnects                           ; 40 / 12,676 ( < 1 % )   ;
+; R14/C12 interconnect drivers                ; 41 / 20,720 ( < 1 % )   ;
+; R3 interconnects                            ; 269 / 130,992 ( < 1 % ) ;
+; R6 interconnects                            ; 268 / 266,960 ( < 1 % ) ;
+; Spine clocks                                ; 4 / 360 ( 1 % )         ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )      ;
 +---------------------------------------------+-------------------------+
 
@@ -1813,7 +1807,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; CLOCK_50        ; CLOCK_50             ; 26.2              ;
+; CLOCK_50        ; CLOCK_50             ; 32.1              ;
+; CLOCK_50,I/O    ; CLOCK_50             ; 1.7               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
@@ -1824,106 +1819,106 @@ This will disable optimization of problematic paths and expose them for further 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------+-------------------+
 ; Source Register                                                              ; Destination Register                                                    ; Delay Added in ns ;
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------+-------------------+
-; UART:UART_MAP|CNT[6]~_emulated                                               ; UART:UART_MAP|CNT[14]                                                   ; 1.083             ;
-; UART:UART_MAP|CNT[11]~_emulated                                              ; UART:UART_MAP|CNT[14]                                                   ; 1.046             ;
-; UART:UART_MAP|CNT[12]~_emulated                                              ; UART:UART_MAP|CNT[14]                                                   ; 1.032             ;
-; UART:UART_MAP|CNT[9]~_emulated                                               ; UART:UART_MAP|CNT[14]                                                   ; 0.969             ;
-; UART:UART_MAP|CNT[12]~1                                                      ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[15]                                                        ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[14]                                                        ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[13]                                                        ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[8]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[7]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[10]                                                        ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[5]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[4]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[2]~_emulated                                               ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[11]~5                                                      ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|UART_UC:UC|EP.e0                                               ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[3]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[0]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|UART_UC:UC|EP.e2                                               ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|CNT[1]                                                         ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; UART:UART_MAP|UART_UC:UC|EP.e1                                               ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; KEY[0]                                                                       ; UART:UART_MAP|CNT[14]                                                   ; 0.561             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                      ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[7]          ; 0.359             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[0]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[6]            ; 0.357             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e6                                            ; LT24Setup:LCD_SETUP_MAP|LT24_WR_N                                       ; 0.332             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3                                      ; LCD_Control:LCD_CTRL_MAP|epres.e14                                      ; 0.265             ;
-; LCD_Control:LCD_CTRL_MAP|QDAT[1]                                             ; LCD_Control:LCD_CTRL_MAP|epres.e5                                       ; 0.257             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[1]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.255             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[5]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.251             ;
-; LCD_Control:LCD_CTRL_MAP|QDAT[0]                                             ; LCD_Control:LCD_CTRL_MAP|epres.e5                                       ; 0.244             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e13                                           ; LCD_Control:LCD_CTRL_MAP|LCD_RS                                         ; 0.241             ;
-; UART:UART_MAP|UART_UC:UC|EP.E4                                               ; UART:UART_MAP|UART_UC:UC|EP.e0                                          ; 0.241             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec                    ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00             ; 0.240             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_End_CMD_DATA           ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_init2             ; 0.239             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[4]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_10usec               ; 0.239             ;
-; UART:UART_MAP|bits[0]                                                        ; UART:UART_MAP|bits[1]                                                   ; 0.237             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e11                                           ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e6                                 ; 0.233             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0                   ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait1              ; 0.224             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e4                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                 ; 0.220             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e10                                           ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e8                                 ; 0.220             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_init                    ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00             ; 0.219             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait1                   ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                 ; 0.219             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[0]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[2]            ; 0.218             ;
-; UART:UART_MAP|bits[2]                                                        ; UART:UART_MAP|bits[3]                                                   ; 0.216             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[6]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.214             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[1]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[2]            ; 0.212             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_init2                  ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA     ; 0.212             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e0                                            ; LCD_Control:LCD_CTRL_MAP|epres.e14                                      ; 0.210             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_wait1_sendByte         ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_End_CMD_DATA      ; 0.210             ;
-; LCD_Control:LCD_CTRL_MAP|QDAT[2]                                             ; LCD_Control:LCD_CTRL_MAP|epres.e5                                       ; 0.207             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e2                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3                                 ; 0.205             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA          ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[1]            ; 0.202             ;
-; UART:UART_MAP|bits[1]                                                        ; UART:UART_MAP|bits[2]                                                   ; 0.200             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[2]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[3]            ; 0.200             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA2         ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_wait1_sendByte    ; 0.199             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[4]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.189             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[2]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.189             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[1]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.189             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[0]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.189             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[3]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.189             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_wait_sendCMD_DATA      ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_Send_CMD_DATA ; 0.185             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[0]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[6]            ; 0.433             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicmSec                      ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[7]           ; 0.429             ;
+; UART:UART_MAP|CNT[11]~_emulated                                              ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.339             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                      ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXmSec[30]        ; 0.338             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3                                      ; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e14                    ; 0.332             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[1]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[4]            ; 0.329             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[2]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[4]            ; 0.326             ;
+; UART:UART_MAP|CNT[9]~_emulated                                               ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.321             ;
+; LCD_Control:LCD_CTRL_MAP|QDAT[1]                                             ; LCD_Control:LCD_CTRL_MAP|QDAT[2]                                        ; 0.320             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[1]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.319             ;
+; LCD_Control:LCD_CTRL_MAP|QDAT[0]                                             ; LCD_Control:LCD_CTRL_MAP|QDAT[2]                                        ; 0.313             ;
+; UART:UART_MAP|CNT[12]~_emulated                                              ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.311             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[5]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.309             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e13                         ; LCD_Control:LCD_CTRL_MAP|LCD_RS                                         ; 0.306             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e6                          ; LT24Setup:LCD_SETUP_MAP|LT24_WR_N                                       ; 0.304             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[4]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_10usec               ; 0.304             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[2]              ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                 ; 0.302             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e1                                      ; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e14                    ; 0.301             ;
+; UART:UART_MAP|bits[0]                                                        ; UART:UART_MAP|bits[1]                                                   ; 0.298             ;
+; UART:UART_MAP|UART_UC:UC|EP.e0                                               ; UART:UART_MAP|UART_UC:UC|EP.e1                                          ; 0.298             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait2                   ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_done               ; 0.297             ;
+; UART:UART_MAP|UART_UC:UC|EP.E4                                               ; UART:UART_MAP|UART_UC:UC|EP.e0                                          ; 0.295             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e2                          ; LT24Setup:LCD_SETUP_MAP|LT24_WR_N                                       ; 0.293             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|NumTicsXuSec[3]              ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|TicuSec                 ; 0.290             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_done                    ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_init3             ; 0.286             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_read_CMD_DATA3         ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA     ; 0.286             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[3]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[4]            ; 0.284             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA          ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[1]            ; 0.284             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec                    ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00             ; 0.284             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e0                          ; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e14                    ; 0.277             ;
+; UART:UART_MAP|bits[2]                                                        ; UART:UART_MAP|bits[3]                                                   ; 0.277             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e0                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e1                                 ; 0.276             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[6]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.276             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_init2                  ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_send_CMD_DATA     ; 0.274             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e2                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e3                                 ; 0.272             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e4                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                 ; 0.272             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_wait1_sendByte         ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_End_CMD_DATA      ; 0.272             ;
+; UART:UART_MAP|UART_UC:UC|EP.e1                                               ; UART:UART_MAP|CNT[10]                                                   ; 0.271             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0                   ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|tmp_LT24_RESET_N        ; 0.271             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[0]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[1]            ; 0.268             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_init                    ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00             ; 0.263             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e6                                 ; 0.261             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e7                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e8                                 ; 0.261             ;
+; UART:UART_MAP|bits[1]                                                        ; UART:UART_MAP|bits[2]                                                   ; 0.261             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00                  ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0              ; 0.260             ;
+; UART:UART_MAP|CNT[6]~_emulated                                               ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.259             ;
+; UART:UART_MAP|UART_UC:UC|EP.e2                                               ; UART:UART_MAP|CNT[10]                                                   ; 0.257             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e10                                     ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                 ; 0.257             ;
+; UART:UART_MAP|CNT[12]~1                                                      ; UART:UART_MAP|CNT[2]~_emulated                                          ; 0.256             ;
+; UART:UART_MAP|CNT[2]~_emulated                                               ; UART:UART_MAP|CNT[2]~_emulated                                          ; 0.256             ;
+; KEY[0]                                                                       ; UART:UART_MAP|CNT[2]~_emulated                                          ; 0.256             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                     ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.250             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e11                                     ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e0                                 ; 0.247             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e8                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e9                                 ; 0.247             ;
+; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e6                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e7                                 ; 0.247             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e12                         ; LCD_Control:LCD_CTRL_MAP|QDAT[0]                                        ; 0.247             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_init3                  ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_read_CMD_DATA     ; 0.245             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_wait_sendCMD_DATA      ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_Send_CMD_DATA ; 0.245             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_Send_CMD_DATA      ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_read_CMD_DATA     ; 0.245             ;
+; UART:UART_MAP|UART_UC:UC|EP.e3                                               ; UART:UART_MAP|UART_UC:UC|EP.E4                                          ; 0.244             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[3]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_10usec               ; 0.216             ;
 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[5] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.184             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e6                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e7                                 ; 0.184             ;
-; UART:UART_MAP|UART_UC:UC|EP.e3                                               ; UART:UART_MAP|UART_UC:UC|EP.e2                                          ; 0.183             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait00                  ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait0              ; 0.183             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[4] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[0] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[3] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[2] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[1] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[6] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.182             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_init3                  ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_read_CMD_DATA     ; 0.182             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e11                                     ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e0                                 ; 0.178             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e8                                      ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e9                                 ; 0.178             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait2                   ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|tmp_LT24_RESET_N        ; 0.177             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e10                                     ; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e11                                ; 0.177             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[5]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.175             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[4]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.175             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[6]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.175             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[3]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.175             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[2]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.175             ;
-; GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP.e5                                      ; LCD_Control:LCD_CTRL_MAP|epres.e14                                      ; 0.169             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_10usec[3]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_10usec               ; 0.151             ;
-; LCD_Control:LCD_CTRL_MAP|RXCOL[2]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.150             ;
-; LCD_Control:LCD_CTRL_MAP|RRGB[2]                                             ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.150             ;
-; LCD_Control:LCD_CTRL_MAP|RYROW[2]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.150             ;
-; LCD_Control:LCD_CTRL_MAP|RRGB[8]                                             ; LT24Setup:LCD_SETUP_MAP|LT24_D[8]                                       ; 0.146             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_done                    ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_init3             ; 0.143             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                     ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_done               ; 0.143             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_10usec                    ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep.e_wait1              ; 0.139             ;
-; LCD_Control:LCD_CTRL_MAP|RRGB[9]                                             ; LT24Setup:LCD_SETUP_MAP|LT24_D[9]                                       ; 0.125             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[4]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_wait1_sendByte    ; 0.121             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|cont_Tics[3]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2.e_wait1_sendByte    ; 0.121             ;
-; UART:UART_MAP|bits[3]                                                        ; UART:UART_MAP|UART_UC:UC|EP.e2                                          ; 0.114             ;
-; LCD_Control:LCD_CTRL_MAP|RRGB[12]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[12]                                      ; 0.097             ;
-; LCD_Control:LCD_CTRL_MAP|RRGB[10]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[10]                                      ; 0.097             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[7]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.094             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e1                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[6]                                       ; 0.087             ;
-; LCD_Control:LCD_CTRL_MAP|epres.e14                                           ; LT24Setup:LCD_SETUP_MAP|LT24_D[6]                                       ; 0.087             ;
-; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24          ; LT24Setup:LCD_SETUP_MAP|LT24_D[6]                                       ; 0.087             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[4] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[0] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[3] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[2] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[1] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|read_addr[6] ; LT24Setup:LCD_SETUP_MAP|LT24_RS                                         ; 0.181             ;
+; UART:UART_MAP|bits[3]                                                        ; UART:UART_MAP|UART_UC:UC|EP.e2                                          ; 0.174             ;
+; UART:UART_MAP|CNT[15]                                                        ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[14]                                                        ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[13]                                                        ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[8]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[7]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[10]                                                        ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[5]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[4]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[11]~5                                                      ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[3]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[0]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; UART:UART_MAP|CNT[1]                                                         ; UART:UART_MAP|CNT[12]~_emulated                                         ; 0.170             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[6]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[5]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[3]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[2]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[1]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|u_romaddr[4]                 ; LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3.e_End_INIT_LT24     ; 0.162             ;
+; LCD_Control:LCD_CTRL_MAP|RXCOL[2]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.161             ;
+; LCD_Control:LCD_CTRL_MAP|RRGB[2]                                             ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.161             ;
+; LCD_Control:LCD_CTRL_MAP|RYROW[2]                                            ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.161             ;
+; LCD_Control:LCD_CTRL_MAP|QDAT[2]                                             ; LT24Setup:LCD_SETUP_MAP|LT24_D[2]                                       ; 0.161             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[5]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.159             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[4]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.159             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[6]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.159             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[3]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.159             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_5msec[2]                ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_5msec                ; 0.159             ;
+; GENERAL:GENERAL_MAP|RGB2[14]                                                 ; LCD_Control:LCD_CTRL_MAP|RRGB[14]                                       ; 0.155             ;
+; GENERAL:GENERAL_MAP|RGB2[12]                                                 ; LCD_Control:LCD_CTRL_MAP|RRGB[12]                                       ; 0.155             ;
+; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e5                          ; LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres.e6                     ; 0.155             ;
+; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|cont_15usec[7]               ; LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|to_15usec               ; 0.155             ;
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------+-------------------+
 Note: This table only shows the top 100 path(s) that have the largest delay added for hold.
 
@@ -1976,7 +1971,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X11_Y0 to location X21_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (11888): Total time spent on timing analysis during the Fitter is 0.47 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1984,8 +1979,8 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Info: Quartus Prime Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1836 megabytes
-    Info: Processing ended: Wed Feb 21 12:22:11 2024
+    Info: Peak virtual memory: 1828 megabytes
+    Info: Processing ended: Wed Feb 21 17:58:29 2024
     Info: Elapsed time: 00:00:21
     Info: Total CPU time (on all processors): 00:00:39
 

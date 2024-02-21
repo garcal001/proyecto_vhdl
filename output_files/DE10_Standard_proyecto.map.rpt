@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE10_Standard_proyecto
-Wed Feb 21 12:21:49 2024
+Wed Feb 21 17:58:07 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -16,7 +16,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   8. State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep3
   9. State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|ep2
  10. State Machine - |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET|ep
- 11. State Machine - |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|epres
+ 11. State Machine - |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres
  12. State Machine - |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|GENERAL_UC:UC|EP
  13. State Machine - |DE10_Standard_proyecto|UART:UART_MAP|UART_UC:UC|EP
  14. Registers Protected by Synthesis
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 21 12:21:49 2024          ;
+; Analysis & Synthesis Status     ; Successful - Wed Feb 21 17:58:07 2024          ;
 ; Quartus Prime Version           ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                   ; DE10_Standard_proyecto                         ;
 ; Top-level Entity Name           ; DE10_Standard_proyecto                         ;
@@ -191,7 +191,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                        ; Library ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------+---------+
-; LCD_CTRL/LCD_Control.vhd         ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_Control.vhd     ;         ;
+; LCD_CTRL/LCD_CTRL_UC.vhd         ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL_UC.vhd     ;         ;
+; LCD_CTRL/LCD_CTRL.vhd            ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL.vhd        ;         ;
 ; LT24setup/Init128rom_pkg.vhd     ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/Init128rom_pkg.vhd ;         ;
 ; LT24setup/LT24InitLCD.vhd        ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/LT24InitLCD.vhd    ;         ;
 ; LT24setup/LT24InitReset.vhd      ; yes             ; User VHDL File               ; /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/LT24InitReset.vhd  ;         ;
@@ -251,7 +252,8 @@ https://fpgasoftware.intel.com/eula.
 ;          |lpm_divide_nbm:auto_generated|  ; 171 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated                                                   ; lpm_divide_nbm         ; work         ;
 ;             |sign_div_unsign_tlh:divider| ; 171 (0)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider                       ; sign_div_unsign_tlh    ; work         ;
 ;                |alt_u_div_00f:divider|    ; 171 (171)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|GENERAL:GENERAL_MAP|lpm_divide:Div0|lpm_divide_nbm:auto_generated|sign_div_unsign_tlh:divider|alt_u_div_00f:divider ; alt_u_div_00f          ; work         ;
-;    |LCD_Control:LCD_CTRL_MAP|             ; 66 (66)             ; 69 (69)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP                                                                                            ; LCD_Control            ; work         ;
+;    |LCD_Control:LCD_CTRL_MAP|             ; 66 (54)             ; 69 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP                                                                                            ; LCD_Control            ; work         ;
+;       |LCD_Control_UC:UC|                 ; 12 (12)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC                                                                          ; LCD_Control_UC         ; work         ;
 ;    |LT24Setup:LCD_SETUP_MAP|              ; 179 (44)            ; 135 (19)                  ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP                                                                                             ; LT24Setup              ; work         ;
 ;       |LT24InitLCD:DUT_InitLCD|           ; 30 (24)             ; 31 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD                                                                     ; LT24InitLCD            ; work         ;
 ;          |romsinc:DUT_ROM|                ; 6 (6)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |DE10_Standard_proyecto|LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM                                                     ; romsinc                ; work         ;
@@ -309,7 +311,7 @@ Encoding Type:  One-Hot
 
 Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|epres                                                                                                              ;
+; State Machine - |DE10_Standard_proyecto|LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC|epres                                                                                            ;
 +-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
 ; Name      ; epres.e14 ; epres.e13 ; epres.e12 ; epres.e11 ; epres.e10 ; epres.e9 ; epres.e8 ; epres.e7 ; epres.e6 ; epres.e5 ; epres.e4 ; epres.e3 ; epres.e2 ; epres.e1 ; epres.e0 ;
 +-----------+-----------+-----------+-----------+-----------+-----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+----------+
@@ -594,12 +596,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Feb 21 12:21:43 2024
+    Info: Processing started: Wed Feb 21 17:58:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE10_Standard_proyecto -c DE10_Standard_proyecto
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file LCD_CTRL/LCD_Control.vhd
-    Info (12022): Found design unit 1: LCD_Control-arch_LCD_Control File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_Control.vhd Line: 26
-    Info (12023): Found entity 1: LCD_Control File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_Control.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file LCD_CTRL/LCD_CTRL_UC.vhd
+    Info (12022): Found design unit 1: LCD_Control_UC-arch_LCD_Control_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL_UC.vhd Line: 26
+    Info (12023): Found entity 1: LCD_Control_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL_UC.vhd Line: 11
+Info (12021): Found 2 design units, including 1 entities, in source file LCD_CTRL/LCD_CTRL.vhd
+    Info (12022): Found design unit 1: LCD_Control-arch_LCD_Control File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL.vhd Line: 19
+    Info (12023): Found entity 1: LCD_Control File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL.vhd Line: 6
 Info (12021): Found 2 design units, including 0 entities, in source file LT24setup/Init128rom_pkg.vhd
     Info (12022): Found design unit 1: romData_pkg File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/Init128rom_pkg.vhd Line: 5
     Info (12022): Found design unit 2: romData_pkg-body File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/Init128rom_pkg.vhd Line: 14
@@ -619,8 +624,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file GENERAL
     Info (12022): Found design unit 1: GENERAL-GENERAL_ARCH File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 29
     Info (12023): Found entity 1: GENERAL File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file GENERAL/GENERAL_UC.vhd
-    Info (12022): Found design unit 1: GENERAL_UC-def_GENERAL_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 33
-    Info (12023): Found entity 1: GENERAL_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 7
+    Info (12022): Found design unit 1: GENERAL_UC-def_GENERAL_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 31
+    Info (12023): Found entity 1: GENERAL_UC File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file DE10_Standard_proyecto.vhd
     Info (12022): Found design unit 1: DE10_Standard_proyecto-rtl File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 118
     Info (12023): Found entity 1: DE10_Standard_proyecto File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 5
@@ -635,15 +640,16 @@ Info (12128): Elaborating entity "UART" for hierarchy "UART:UART_MAP" File: /hom
 Info (12128): Elaborating entity "UART_UC" for hierarchy "UART:UART_MAP|UART_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART.vhd Line: 55
 Warning (10540): VHDL Signal Declaration warning at UART_UC.vhd(23): used explicit default value for signal "INC_8" because signal was never assigned a value File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/UART/UART_UC.vhd Line: 23
 Info (12128): Elaborating entity "GENERAL" for hierarchy "GENERAL:GENERAL_MAP" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 226
-Warning (10036): Verilog HDL or VHDL warning at GENERAL.vhd(74): object "REG_XCOL" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 74
-Warning (10036): Verilog HDL or VHDL warning at GENERAL.vhd(75): object "REG_YROW" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 75
-Info (12128): Elaborating entity "GENERAL_UC" for hierarchy "GENERAL:GENERAL_MAP|GENERAL_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 79
-Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(27): used implicit default value for signal "REG_XCOL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 27
-Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(28): used implicit default value for signal "REG_YROW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(29): used implicit default value for signal "RGB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 29
-Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(30): used implicit default value for signal "NUM_PIX" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 30
-Warning (10492): VHDL Process Statement warning at GENERAL_UC.vhd(91): signal "UART_DONE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 91
+Warning (10036): Verilog HDL or VHDL warning at GENERAL.vhd(71): object "REG_XCOL" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 71
+Warning (10036): Verilog HDL or VHDL warning at GENERAL.vhd(72): object "REG_YROW" assigned a value but never read File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 72
+Info (12128): Elaborating entity "GENERAL_UC" for hierarchy "GENERAL:GENERAL_MAP|GENERAL_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 76
+Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(25): used implicit default value for signal "REG_XCOL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(26): used implicit default value for signal "REG_YROW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 26
+Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(27): used implicit default value for signal "RGB" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 27
+Warning (10541): VHDL Signal Declaration warning at GENERAL_UC.vhd(28): used implicit default value for signal "NUM_PIX" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at GENERAL_UC.vhd(89): signal "UART_DONE" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL_UC.vhd Line: 89
 Info (12128): Elaborating entity "LCD_Control" for hierarchy "LCD_Control:LCD_CTRL_MAP" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 248
+Info (12128): Elaborating entity "LCD_Control_UC" for hierarchy "LCD_Control:LCD_CTRL_MAP|LCD_Control_UC:UC" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LCD_CTRL/LCD_CTRL.vhd Line: 46
 Info (12128): Elaborating entity "LT24Setup" for hierarchy "LT24Setup:LCD_SETUP_MAP" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/DE10_Standard_proyecto.vhd Line: 270
 Info (12128): Elaborating entity "LT24InitReset" for hierarchy "LT24Setup:LCD_SETUP_MAP|LT24InitReset:DUT_RESET" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/LT24setup.vhd Line: 98
 Info (12128): Elaborating entity "LT24InitLCD" for hierarchy "LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/LT24setup.vhd Line: 110
@@ -651,9 +657,9 @@ Info (12128): Elaborating entity "romsinc" for hierarchy "LT24Setup:LCD_SETUP_MA
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "LT24Setup:LCD_SETUP_MAP|LT24InitLCD:DUT_InitLCD|romsinc:DUT_ROM|rom" is uninferred due to inappropriate RAM size File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/LT24setup/romsinc.vhd Line: 16
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "GENERAL:GENERAL_MAP|Div0" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 132
-Info (12130): Elaborated megafunction instantiation "GENERAL:GENERAL_MAP|lpm_divide:Div0" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 132
-Info (12133): Instantiated megafunction "GENERAL:GENERAL_MAP|lpm_divide:Div0" with the following parameter: File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 132
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "GENERAL:GENERAL_MAP|Div0" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 124
+Info (12130): Elaborated megafunction instantiation "GENERAL:GENERAL_MAP|lpm_divide:Div0" File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 124
+Info (12133): Instantiated megafunction "GENERAL:GENERAL_MAP|lpm_divide:Div0" with the following parameter: File: /home/guillermo/Documentos/Estudios/VHDL/proyecto_vhdl/GENERAL/GENERAL.vhd Line: 124
     Info (12134): Parameter "LPM_WIDTHN" = "16"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -684,9 +690,9 @@ Info (21057): Implemented 670 device resources after synthesis - the final resou
     Info (21059): Implemented 32 output pins
     Info (21061): Implemented 635 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 506 megabytes
-    Info: Processing ended: Wed Feb 21 12:21:49 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 514 megabytes
+    Info: Processing ended: Wed Feb 21 17:58:07 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:12
 
 
