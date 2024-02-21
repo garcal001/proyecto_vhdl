@@ -1,9 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL; -- unsigned mota erabili ahal izateko
+USE ieee.numeric_std.ALL;
 
--- ping-pong jokoa. bi erabiltzaileen artean.
--- fitxategi honetan kontrol-unitatearen definizioa soilik ageri da.
 ENTITY GENERAL_UC IS
 	PORT (
 		-- Entradas
@@ -31,7 +29,7 @@ ENTITY GENERAL_UC IS
 	);
 END GENERAL_UC;
 ARCHITECTURE def_GENERAL_UC OF GENERAL_UC IS
-	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10);
+	TYPE estado IS (e0, e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11);
 	SIGNAL EP, ES : estado;
 
 BEGIN
@@ -63,8 +61,6 @@ BEGIN
 				ELSE
 					ES <= e4;
 				END IF;
-				--------------------------------------------------------------------------------
-
 			WHEN e5 =>
 				ES <= e6;
 			WHEN e6 =>
@@ -84,10 +80,16 @@ BEGIN
 			WHEN e9 =>
 				ES <= e10;
 			WHEN e10 =>
-				IF (TC_OFF = '0') THEN
-					ES <= e5;
+				IF (TC_OFF = '1') THEN
+					ES <= e11;
 				ELSE
+					ES <= e5;
+				END IF;
+			WHEN e11 =>
+				IF UART_DONE = '1' THEN
 					ES <= e0;
+				ELSE
+					ES <= e11;
 				END IF;
 
 			WHEN OTHERS =>
@@ -100,30 +102,22 @@ BEGIN
 	BEGIN
 		IF RESET = '1' THEN
 			EP <= e0;
-		ELSIF (clk'EVENT) AND (clk = '1') THEN
+			ELSIF (clk'EVENT) AND (clk = '1') THEN
 			EP <= ES;
 		END IF;
 	END PROCESS;
 	-- Señales de control
 
 	LD_POS <= '0' WHEN (EP = e0 OR EP = e1 OR EP = e2 OR EP = e3 OR EP = e4) ELSE
-		'1';
+	'1';
 
 	RESET_BOLA <= '1' WHEN (EP = e0) ELSE
-		'0';
+	'0';
 	OP_SETCURSOR <= '1' WHEN (EP = e1 OR EP = e5) ELSE
-		'0';
+	'0';
 	OP_DRAWCOLOUR <= '1' WHEN (EP = e3 OR EP = e7) ELSE
-		'0';
+	'0';
 	DEC_OFF <= '1' WHEN (EP = e9 AND TC_OFF = '0') ELSE
-		'0';
-	-- DEC_OFF <= '1' WHEN (EP = e8) ELSE
-	-- 	'0';
-	-- LD_POS <= '1' WHEN (EP = e4 OR EP = e6 OR EP = e2 OR EP = E0) ELSE
-	-- 	'0';
+	'0';
 
-	-- REG_XCOL <= X"64" WHEN (EP = e3 OR EP = e4 OR EP = e5) ELSE
-	-- 	x"00";
-	-- REG_YROW <= "0" & X"64" WHEN (EP = e3 OR EP = e4 OR EP = e5) ELSE
-	-- 	"0" & x"00";
 END def_GENERAL_UC;

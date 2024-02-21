@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Feb 20 16:25:05 2024
+Analysis & Synthesis Status : Successful - Wed Feb 21 12:21:49 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : DE10_Standard_proyecto
 Top-level Entity Name : DE10_Standard_proyecto
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 1065
+Total registers : 298
 Total pins : 35
 Total virtual pins : 0
-Total block memory bits : 786,432
+Total block memory bits : 0
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

@@ -1,6 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
+USE ieee.math_real.ALL;
 
 ENTITY GENERAL IS
     PORT (
@@ -57,20 +58,19 @@ ARCHITECTURE GENERAL_ARCH OF GENERAL IS
 
     SIGNAL XCOL_DATA     : unsigned(7 DOWNTO 0) := x"64";       -- 100
     SIGNAL YROW_DATA     : unsigned(8 DOWNTO 0) := "0" & x"64"; -- 100
-    SIGNAL YROW_OFF_DATA : unsigned(7 DOWNTO 0) := x"20";
+    SIGNAL YROW_OFF_DATA : unsigned(7 DOWNTO 0) := x"00";
 
     SIGNAL TC_OFF        : STD_LOGIC            := '0'; -- Cambiado por warning falta comprobar
 
+    SIGNAL RGB2          : UNSIGNED(15 DOWNTO 0);
+    SIGNAL RGBFONDO      : UNSIGNED(15 DOWNTO 0);
     -- Salidas
     SIGNAL RESET_BOLA    : STD_LOGIC;
-    --SIGNAL CL_LCD_DATA   : STD_LOGIC;
-    -- SIGNAL OP_SETCURSOR  : STD_LOGIC;
-    -- SIGNAL OP_DRAWCOLOUR : STD_LOGIC;
     SIGNAL DEC_OFF       : STD_LOGIC;
 
     SIGNAL REG_XCOL      : unsigned(7 DOWNTO 0);
     SIGNAL REG_YROW      : unsigned(8 DOWNTO 0);
-    SIGNAL LD_POS2       : STD_LOGIC;
+    SIGNAL LD_POS        : STD_LOGIC;
 
 BEGIN
     UC : GENERAL_UC PORT MAP(
@@ -96,25 +96,22 @@ BEGIN
         REG_YROW      => REG_YROW,
         -- RGB           => RGB,
         -- NUM_PIX       => NUM_PIX,
-        LD_POS        => LD_POS2
+        LD_POS        => LD_POS
     );
 
-    -- XCOL      <= X"64";
-    -- YROW_DATA <= "0" & x"64";
-    -- YROW      <= "0" & X"64";
     -- Contador YROW_OFF_DATA
     PROCESS (clk, RESET)
     BEGIN
         IF RESET = '1' THEN
-            YROW_OFF_DATA <= X"20";
+            YROW_OFF_DATA <= X"00";
 
-        ELSIF clk'event AND clk = '1' THEN
+            ELSIF clk'event AND clk = '1' THEN
             IF RESET_BOLA = '1' THEN
-                YROW_OFF_DATA <= x"74";
+                YROW_OFF_DATA <= x"64";
             END IF;
-            IF YROW_OFF_DATA < X"10" THEN
-                TC_OFF <= '1';
-            ELSE
+            IF YROW_OFF_DATA <= X"01" THEN
+                TC_OFF           <= '1';
+                ELSE
                 TC_OFF <= '0';
                 IF DEC_OFF = '1' THEN
                     YROW_OFF_DATA <= YROW_OFF_DATA - 1;
@@ -123,41 +120,38 @@ BEGIN
 
         END IF;
     END PROCESS;
-    -- 240 x 320
-    XCOL <= x"46" WHEN LD_POS2 = '1' ELSE
-        x"00";
-    YROW <= ("0" & YROW_OFF_DATA) + x"6e" WHEN LD_POS2 = '1' ELSE
-        "0" & x"00";
-    RGB <= X"FFFF" WHEN LD_POS2 = '1' ELSE
-        X"0000";
-    NUM_PIX <= "0" & X"0064" WHEN LD_POS2 = '1' ELSE
-        "0" & X"0000";
 
-    -- -- TC_OFF <= '1' WHEN YROW_OFF_DATA = x"00" ELSE
-    --     '0';
+    XCOL <= resize(120 - YROW_OFF_DATA * 120 / 100, 8)
+    WHEN LD_POS = '1' ELSE
+    x"00";
+    YROW <= ("0" & YROW_OFF_DATA) + (x"6e" - 50) WHEN LD_POS = '1' ELSE
+    "0" & x"00";
 
-    -- -- Registro XCOL
-    -- PROCESS (CLK, RESET)
-    -- BEGIN
-    --     IF RESET = '1' THEN
-    --         XCOL_DATA <= x"00";
-    --     ELSIF CLK'event AND CLK = '1' THEN
-    --         IF LD_POS = '1' THEN
-    --             XCOL_DATA <= REG_XCOL;
-    --         END IF;
-    --     END IF;
-    -- END PROCESS;
+    PROCESS (clk, RESET)
+    BEGIN
 
-    -- -- Registro YROW
-    -- PROCESS (CLK, RESET)
-    -- BEGIN
-    --     IF RESET = '1' THEN
-    --         YROW_DATA <= "0" & x"00";
-    --     ELSIF CLK'event AND CLK = '1' THEN
-    --         IF LD_POS = '1' THEN
-    --             YROW_DATA <= REG_YROW;
-    --         END IF;
-    --     END IF;
-    -- END PROCESS;
+        IF RESET = '1' THEN
+            RGB2     <= x"0000";
+            RGBFONDO <= x"0000";
+            ELSIF clk'event AND clk = '1' THEN
+            CASE UART_IN IS
+                WHEN "01110010" => RGB2 <= "1111100000000000";
+                WHEN "01100111" => RGB2 <= "0000011111100000";
+                WHEN "01100010" => RGB2 <= "0000000000011111";
+                WHEN OTHERS     => RGB2     <= RGB2;
+            END CASE;
 
+            CASE UART_IN IS
+                WHEN "01010010" => RGBFONDO <= "1111100000000000";
+                WHEN "01000111" => RGBFONDO <= "0000011111100000";
+                WHEN "01000010" => RGBFONDO <= "0000000000011111";
+                WHEN OTHERS     => RGBFONDO     <= RGBFONDO;
+            END CASE;
+        END IF;
+    END PROCESS;
+
+    RGB <= RGB2 WHEN LD_POS = '1' ELSE
+    RGBFONDO;
+    NUM_PIX <= resize(2 * (YROW_OFF_DATA * 120 / 100), 17) WHEN LD_POS = '1' ELSE --
+    "0" & X"0000";
 END GENERAL_ARCH;
